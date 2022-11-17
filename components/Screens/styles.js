@@ -23,21 +23,7 @@ const Styles = StyleSheet.create({
     height: "100%",
     paddingBottom: "20%"
   },
-  button: {
-    width: 160,
-    height: 40,
-    margin: 20,
-    justifyContent:"center",
-    fontWeight: 500,
-    borderRadius: 10,
-    backgroundColor: colors.buttonColor,
-  },
-  buttonText: {
-    padding: 8,
-    color: colors.primario,
-    textAlign:"center",
-    // fontWeight:500,
-  },
+
 });
 
 export default Styles;

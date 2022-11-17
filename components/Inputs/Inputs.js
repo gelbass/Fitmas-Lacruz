@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, TextInput, View } from "react-native";
+import { StyleSheet, TextInput, View } from "react-native";
 
-import Header from "../Header/Header";
 import colors from "../../constants/colors";
 
-const Inputs = ({ text, newStyles }) => {
+const Inputs = ({user, text, newStyles }) => {
   const [textItem, setTextItem] = useState("");
   const onHandleChangeText = t => {
     setTextItem(t);
+    user(textItem)
   };
+  
   return (
     <View>
       <TextInput
@@ -28,7 +29,6 @@ const styles = StyleSheet.create({
     margin:20,
     padding:10,
     width:'90%',
-    // height:192,
     borderRadius:10,
     backgroundColor: colors.blanco,
     border: 1,

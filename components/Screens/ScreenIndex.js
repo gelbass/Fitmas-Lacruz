@@ -1,28 +1,29 @@
-import { Image, Pressable, Text, View } from 'react-native'
+import { Image, Pressable, Text, View } from "react-native";
 
-import React from 'react'
-import Styles from './styles'
+import Buttons from "../Buttons";
+import React from "react";
+import Styles from "./styles";
 
-const ScreenIndex = ({onLoggin,newStyles}) => {
+const ScreenIndex = ({ onGoTologgin, newStyles,fonts }) => {
   return (
     <View>
       <View style={{ height: "5%", backgroundColor: "#561D74" }} />
       <Image source={require("../../assets/img/index.jpg")} />
       <View style={styles.containerButton}>
-        <Pressable onPress={() => onLoggin(false)} style={styles.button}>
-          <Text style={{ ...styles.buttonText, ...newStyles}}>
-            REGÍSTRATE
-          </Text>
-        </Pressable>
-        <Pressable onPress={() => onLoggin(true)} style={styles.button}>
-          <Text style={{ ...styles.buttonText, ...newStyles}}>
-            INICIA SESIÓN
-          </Text>
-        </Pressable>
+        <Buttons
+          funtion={() => onGoTologgin(true)}
+          newStyles={{ fontFamily: fonts.RobotoMedium }}
+          title={"REGÍSTRATE"}
+        />
+        <Buttons
+          funtion={()=> onGoTologgin(true)}
+          newStyles={{ fontFamily: fonts.RobotoMedium }}
+          title={"INICIAR SESIÓN"}
+        />
       </View>
     </View>
-  )
-}
+  );
+};
 
 export default ScreenIndex;
 
