@@ -3,11 +3,11 @@ import { StyleSheet, TextInput, View } from "react-native";
 
 import colors from "../../constants/colors";
 
-const Inputs = ({user, text, newStyles }) => {
+const Inputs = ({value, text, newStyles }) => {
   const [textItem, setTextItem] = useState("");
   const onHandleChangeText = t => {
     setTextItem(t);
-    user(textItem)
+    value(textItem)
   };
   
   return (

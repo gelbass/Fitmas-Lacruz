@@ -6,15 +6,15 @@ import Inputs from "../Inputs/Inputs";
 import React from "react";
 import Styles from "./styles";
 
-const ScreenLoggin = ({ onIsLoggin,onExit, user, fonts }) => {
+const ScreenLoggin = ({ onIsLoggin,onExit, user, pass,fonts }) => {
   return (
     <View>
       <Header newStyles={fonts} text={"Inicio de Sesión"} />
       <Text style={{ fontFamily: fonts.RobotoBlack, margin: 40, fontSize: 30 }}>
         FitMas
       </Text>
-      <Inputs fonts={fonts} text={"Usuario"} user={user}/>
-      <Inputs fonts={fonts} text={"Contraseña"} />
+      <Inputs fonts={fonts} text={"Usuario"} value={user}/>
+      <Inputs fonts={fonts} text={"Contraseña"} value={pass}/>
       <View
         style={{
           // position: "absolute",

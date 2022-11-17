@@ -10,6 +10,7 @@ export default function App() {
   const [goTologgin, setGoTologgin] = useState(false);
   const [isLogueado, setIsLogueado] = useState(true);
   const [user, setUser] = useState("");
+  const [pass, setPass] = useState("");
 
   const [loaded] = useFonts({
     RobotoMedium: require("./assets/fonts/Roboto-Medium.ttf"),
@@ -39,6 +40,7 @@ export default function App() {
         onExit={handleGoTologgin}
         onIsLoggin={handleIsLoggin}
         user={setUser}
+        pass={setPass}
         fonts={{ RobotoMedium: "RobotoMedium", RobotoBlack: "RobotoBlack" }}
       />
     ));
