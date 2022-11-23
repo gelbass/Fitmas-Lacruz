@@ -1,24 +1,22 @@
 import { StyleSheet, Text, View } from "react-native";
 
-import Buttons from "../Buttons";
-import Header from "../Header/Header";
-import Inputs from "../Inputs/Inputs";
+import Buttons from "../components/Buttons";
+import Header from "../components/Header";
+import Inputs from "../components/Inputs";
 import React from "react";
 import Styles from "./styles";
 
-const ScreenLoggin = ({ onIsLoggin,onExit, user, pass,fonts }) => {
+const LogginScreen = ({ onIsLoggin,onExit, user, pass,fonts }) => {
   return (
     <View>
       <Header newStyles={fonts} text={"Inicio de Sesión"} />
-      <Text style={{ fontFamily: fonts.RobotoBlack, margin: 40, fontSize: 30 }}>
+      <Text style={{ fontFamily: "RobotoBlack", margin: 40, fontSize: 30 }}>
         FitMas
       </Text>
       <Inputs fonts={fonts} text={"Usuario"} value={user}/>
       <Inputs fonts={fonts} text={"Contraseña"} value={pass}/>
       <View
         style={{
-          // position: "absolute",
-          // zIndex: 1,
           flexDirection: "row",
           justifyContent: "space-around",
           alignContent: "flex-end",
@@ -29,12 +27,12 @@ const ScreenLoggin = ({ onIsLoggin,onExit, user, pass,fonts }) => {
       >
         <Buttons
           funtion={()=>onExit(false)}
-          newStyles={{ fontFamily: fonts.RobotoMedium }}
+          newStyles={{ fontFamily: "RobotoMedium" }}
           title={"SALIR"}
         />
         <Buttons
           funtion={()=>onIsLoggin(false)}
-          newStyles={{ fontFamily: fonts.RobotoMedium }}
+          newStyles={{ fontFamily: "RobotoMedium" }}
           title={"INICIAR SESIÓN"}
         />
       </View>
@@ -42,6 +40,6 @@ const ScreenLoggin = ({ onIsLoggin,onExit, user, pass,fonts }) => {
   );
 };
 
-export default ScreenLoggin;
+export default LogginScreen;
 
 const styles = Styles;

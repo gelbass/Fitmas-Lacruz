@@ -1,23 +1,23 @@
-import { Image, Pressable, Text, View } from "react-native";
+import { Image, View } from "react-native";
 
-import Buttons from "../Buttons";
+import Buttons from "../components/Buttons";
 import React from "react";
 import Styles from "./styles";
 
-const ScreenIndex = ({ onGoTologgin, newStyles,fonts }) => {
+const IndexScreen = ({ onGoTologgin }) => {
   return (
     <View>
       <View style={{ height: "5%", backgroundColor: "#561D74" }} />
-      <Image source={require("../../assets/img/index.jpg")} />
+      <Image source={require("../assets/img/index.jpg")} />
       <View style={styles.containerButton}>
         <Buttons
           funtion={() => onGoTologgin(true)}
-          newStyles={{ fontFamily: fonts.RobotoMedium }}
+          newStyles={{ fontFamily: "RobotoMedium" }}
           title={"REGÍSTRATE"}
         />
         <Buttons
           funtion={()=> onGoTologgin(true)}
-          newStyles={{ fontFamily: fonts.RobotoMedium }}
+          newStyles={{ fontFamily: "RobotoMedium" }}
           title={"INICIAR SESIÓN"}
         />
       </View>
@@ -25,6 +25,6 @@ const ScreenIndex = ({ onGoTologgin, newStyles,fonts }) => {
   );
 };
 
-export default ScreenIndex;
+export default IndexScreen;
 
 const styles = Styles;

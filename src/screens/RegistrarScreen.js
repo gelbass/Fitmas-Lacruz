@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from 'react-native'
 
 import React from 'react'
 
-const ScreenRegister = () => {
+const RegistrarScreen = () => {
   return (
     <View>
       <Text>ScreenRegist</Text>
@@ -10,6 +10,6 @@ const ScreenRegister = () => {
   )
 }
 
-export default ScreenRegister
+export default RegistrarScreen
 
 const styles = StyleSheet.create({})

@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import colors from "../../constants/colors";
+import colors from "../constants/colors";
 
 const Styles = StyleSheet.create({
   container: {
@@ -21,7 +21,7 @@ const Styles = StyleSheet.create({
     alignItems: "flex-end",
     width: "100%",
     height: "100%",
-    paddingBottom: "20%"
+    paddingBottom: "20%",
   },
 
 });

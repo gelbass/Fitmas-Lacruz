@@ -29,6 +29,5 @@ const styles = StyleSheet.create({
     padding: 8,
     color: colors.primario,
     textAlign:"center",
-    // fontWeight:500,
   },
 });

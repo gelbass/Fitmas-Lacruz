@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { StyleSheet, TextInput, View } from "react-native";
 
-import colors from "../../constants/colors";
+import colors from "../constants/colors";
 
 const Inputs = ({value, text, newStyles }) => {
   const [textItem, setTextItem] = useState("");

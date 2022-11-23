@@ -1,8 +1,8 @@
-import ScreenIndex from "./components/Screens/ScreenIndex";
-import ScreenLoggin from "./components/Screens/ScreenLoggin";
-import ScreenPrincipal from "./components/Screens/ScreenPrincipal";
+import IndexScreen from "./src/screens/IndexScreen";
+import LogginScreen from "./src/screens/LogginScreen";
+import PersonalNavigator from "./src/navigation/PersonalNavigator";
 import { View } from "react-native";
-import colors from "./constants/colors";
+import colors from "./src/constants/colors";
 import { useFonts } from "expo-font";
 import { useState } from "react";
 
@@ -13,8 +13,8 @@ export default function App() {
   const [pass, setPass] = useState("");
 
   const [loaded] = useFonts({
-    RobotoMedium: require("./assets/fonts/Roboto-Medium.ttf"),
-    RobotoBlack: require("./assets/fonts/Roboto-Black.ttf")
+    RobotoMedium: require("./src/assets/fonts/Roboto-Medium.ttf"),
+    RobotoBlack: require("./src/assets/fonts/Roboto-Black.ttf")
   });
 
   const handleGoTologgin = loggin => {
@@ -28,31 +28,29 @@ export default function App() {
     return null;
   }
   let content = (
-    <ScreenIndex
+    <IndexScreen
       onGoTologgin={handleGoTologgin}
-      fonts={{ RobotoMedium: "RobotoMedium", RobotoBlack: "RobotoBlack" }}
     />
   );
 
   goTologgin &&
     (content = (
-      <ScreenLoggin
+      <LogginScreen
         onExit={handleGoTologgin}
         onIsLoggin={handleIsLoggin}
         user={setUser}
         pass={setPass}
-        fonts={{ RobotoMedium: "RobotoMedium", RobotoBlack: "RobotoBlack" }}
       />
     ));
 
   isLogueado ||
     (content = (
-      <ScreenPrincipal
-        onExit={handleGoTologgin}
-        onLoggout={handleIsLoggin}
-        user={user}
-        fonts={{ RobotoMedium: "RobotoMedium", RobotoBlack: "RobotoBlack" }}
-      />
+      <PersonalNavigator loggOut={handleIsLoggin} />
+      // <PrincipalScreen
+      //   onExit={handleGoTologgin}
+      //   onLoggout={handleIsLoggin}
+      //   user={user}
+      // />
     ));
 
   return (

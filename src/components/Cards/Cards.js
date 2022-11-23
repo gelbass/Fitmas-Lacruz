@@ -1,7 +1,6 @@
-import { StyleSheet, Text, View } from 'react-native'
-
 import React from 'react'
 import StylesCards from './StylesCards'
+import { View } from 'react-native'
 
 const Cards = ({ children, newStyles }) => {
   return (
