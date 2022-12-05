@@ -1,16 +1,16 @@
+import  { COLORS } from "../constants/colors";
 import { StyleSheet } from "react-native";
-import colors from "../constants/colors";
 
 const Styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.backgroundColor
+    backgroundColor: COLORS.backgroundColor
   },
   text: {
     padding: 10,
     textAlign:"center",
     justifyContent: "center",
-    color: colors.font,
+    color: COLORS.font,
   },
 
   containerButton: {
@@ -23,7 +23,13 @@ const Styles = StyleSheet.create({
     height: "100%",
     paddingBottom: "20%",
   },
-
+  img:{
+    width: 90,
+    height: 90,
+    borderRadius: 50,
+    borderWidth: 1,
+    borderColor: "#000"
+  }
 });
 
 export default Styles;

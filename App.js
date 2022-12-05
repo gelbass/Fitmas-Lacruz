@@ -1,8 +1,9 @@
+import BottonTabNavigator from "./src/navigation/BottonTabNavigator";
+import { COLORS } from "./src/constants/colors";
 import IndexScreen from "./src/screens/IndexScreen";
 import LogginScreen from "./src/screens/LogginScreen";
 import PersonalNavigator from "./src/navigation/PersonalNavigator";
 import { View } from "react-native";
-import colors from "./src/constants/colors";
 import { useFonts } from "expo-font";
 import { useState } from "react";
 
@@ -28,6 +29,7 @@ export default function App() {
     return null;
   }
   let content = (
+    // <BottonTabNavigator />
     <IndexScreen
       onGoTologgin={handleGoTologgin}
     />
@@ -45,7 +47,8 @@ export default function App() {
 
   isLogueado ||
     (content = (
-      <PersonalNavigator loggOut={handleIsLoggin} />
+      <BottonTabNavigator loggOut={handleIsLoggin}/>
+      // <PersonalNavigator loggOut={handleIsLoggin} />
       // <PrincipalScreen
       //   onExit={handleGoTologgin}
       //   onLoggout={handleIsLoggin}
@@ -54,7 +57,7 @@ export default function App() {
     ));
 
   return (
-    <View style={{ flex: 1, backgroundColor: colors.backgroundColor }}>
+    <View style={{ flex: 1, backgroundColor: COLORS.backgroundColor }}>
       {content}
     </View>
   );

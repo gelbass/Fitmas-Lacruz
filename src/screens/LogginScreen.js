@@ -41,5 +41,3 @@ const LogginScreen = ({ onIsLoggin,onExit, user, pass,fonts }) => {
 };
 
 export default LogginScreen;
-
-const styles = Styles;

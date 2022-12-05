@@ -1,4 +1,4 @@
-export default{
+export const COLORS ={
   primario: '#561D74',
   secundario: '#F2D9FF',
   blanco: '#ffff',
@@ -6,6 +6,5 @@ export default{
   nativo: '#B78FCC',
   otro: '#00A6A6',
   backgroundColor: '#D5D5D6',
-  buttonColor: '#F9F9F9',
-  
-}
+  buttonColor: '#F9F9F9', 
+};

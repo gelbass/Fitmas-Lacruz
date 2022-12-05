@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { StyleSheet, TextInput, View } from "react-native";
 
-import colors from "../constants/colors";
+import { COLORS } from "../constants/colors";
 
 const Inputs = ({value, text, newStyles }) => {
   const [textItem, setTextItem] = useState("");
@@ -30,10 +30,10 @@ const styles = StyleSheet.create({
     padding:10,
     width:'90%',
     borderRadius:10,
-    backgroundColor: colors.blanco,
+    backgroundColor: COLORS.blanco,
     border: 1,
     borderRadius: 10,
-    shadowColor: colors.nativo,
+    shadowColor: COLORS.nativo,
     shadowOffset: { width: 2, height: 2 },
     shadowRadius: 60,
     shadowOpacity: 1,
