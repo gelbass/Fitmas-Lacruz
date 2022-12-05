@@ -5,7 +5,7 @@ import { CATEGORIAS } from "../data/categorias";
 import Cards from "../components/Cards";
 import Styles from "./styles";
 
-const PrincipalScreen = ({ navigation, onLoggout, user }) => {
+const PrincipalScreen = ({ navigation, user }) => {
   const handlerSelectCategoria = (item) => {
     navigation.navigate("Profesionales", {
       profesionalID: item.id,
@@ -82,11 +82,6 @@ const PrincipalScreen = ({ navigation, onLoggout, user }) => {
         data={CATEGORIAS}
         keyExtractor={item => item.id}
         renderItem={renderCategorias}
-      />
-      <Buttons
-        funtion={() => onLoggout(true)}
-        newStyles={{ fontFamily: "RobotoMedium" }}
-        title={"CERRAR SESIÓN"}
       />
     </View>
   );

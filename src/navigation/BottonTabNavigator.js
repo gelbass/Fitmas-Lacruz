@@ -5,7 +5,8 @@ import { COLORS } from "../constants/colors";
 import Favoritos from "../screens/Favoritos";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { NavigationContainer } from "@react-navigation/native";
-import Perfil from "../screens/Perfil";
+import Perfil from "../screens/PerfilScreen";
+import PerfilScreen from "../screens/PerfilScreen";
 import PersonalNavigator from "./PersonalNavigator";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
@@ -18,8 +19,8 @@ export default (BottonTabNavigator = ({ loggOut }) => {
         initialRouteName="PrincipalScreen"
         screenOptions={{
           headerShown: false,
-          // tabBarShowLabel: false,
-          tabBarStyles: styles.tabBar
+          tabBarActiveTintColor: COLORS.secundario,
+          tabBarStyle: styles.tabBar
         }}
       >
         <BottonTabs.Screen
@@ -27,29 +28,40 @@ export default (BottonTabNavigator = ({ loggOut }) => {
           options={{
             tabBarIcon: ({ focus }) =>
               <View>
-                <Ionicons name="logo-capacitor" size={30}  />
+                <Ionicons
+                  name="logo-capacitor"
+                  size={30}
+                  style={styles.icono}
+                />
               </View>
           }}
         >
           {props => <PersonalNavigator {...props} onLoggout={loggOut} />}
         </BottonTabs.Screen>
-        <BottonTabs.Screen name="Buscar" component={Buscar} options={{
-            tabBarIcon: ({ focus }) =>
-                <Ionicons name="search" size={30}  />
-          }}/>
-        <BottonTabs.Screen name="Favoritos" component={Favoritos} options={{
-            tabBarIcon: ({ focus }) =>
-                <Ionicons name="star" size={30}  />
-          }}/>
-        <BottonTabs.Screen name="Perfil" component={Perfil} options={{
-            tabBarIcon: ({ focus }) =>
-                <Ionicons name="person" size={30}  />
-          }}/>
+        <BottonTabs.Screen
+          name="Buscar"
+          component={Buscar}
+          options={{
+            tabBarIcon: ({ focus }) => <Ionicons name="search" size={30} style={styles.icono}/>
+          }}
+        />
+        <BottonTabs.Screen
+          name="Favoritos"
+          component={Favoritos}
+          options={{
+            tabBarIcon: ({ focus }) => <Ionicons name="star" size={30} style={styles.icono}/>
+          }}
+        />
+        <BottonTabs.Screen
+          name="Perfil"
+          options={{
+            tabBarIcon: ({ focus }) => <Ionicons name="person" size={30} style={styles.icono}/>
+          }}
+        >
+          {props => <PerfilScreen {...props} onLoggout={loggOut} />}
+        </BottonTabs.Screen>
       </BottonTabs.Navigator>
     </NavigationContainer>
-    // <View>
-    //   <Text>HOLA</Text>
-    // </View>
   );
 });
 
@@ -57,6 +69,8 @@ const styles = StyleSheet.create({
   tabBar: {
     backgroundColor: COLORS.primario,
     color: COLORS.nativo,
-    height: 200
-  }
+    height: "10%",
+    paddingBottom: 10
+  },
+  icono: {color:COLORS.nativo}
 });
