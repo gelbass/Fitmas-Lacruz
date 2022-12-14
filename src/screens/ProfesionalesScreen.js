@@ -25,10 +25,10 @@ const ProfesionalesScreen = ({ navigation }) => {
     dispatch(selectedProfesionales(item.id));
     navigation.navigate("Detalle", {
       nombre: item.nombre,
-      descripcion: item.descripcion,
-      disponibilidad: item.disponibilidad,
-      formacion: item.formacion,
-      ubicacion: item.ubicacion
+      // descripcion: item.descripcion,
+      // disponibilidad: item.disponibilidad,
+      // formacion: item.formacion,
+      // ubicacion: item.ubicacion
     });
   };
   const renderProfesionales = ({ item }) =>

@@ -1,6 +1,4 @@
-import {} from "react-native";
-
-import { FlatList, Image, Text, TouchableOpacity, View } from "react-native";
+import { FlatList, Image, Text, View } from "react-native";
 import { connect, useDispatch, useSelector } from "react-redux";
 
 import Buttons from "../components/Buttons";
@@ -14,10 +12,13 @@ const PrincipalScreen = ({ navigation }) => {
   const categorias = useSelector(state => state.categorias.categorias);
 
   const handlerSelectCategoria = item => {
+    console.log(item);
     dispatch(selectedCategoria(item.id));
+    console.log(item);
     navigation.navigate("Profesionales", {
       nombre: item.nombre
     });
+    console.log(item);
   };
 
   const renderCategorias = ({ item }) =>
