@@ -1,17 +1,29 @@
 import { FlatList, Image, StyleSheet, Text, View } from "react-native";
+import React, { useEffect } from "react";
+import { connect, useDispatch, useSelector } from "react-redux";
+import {
+  filterProfesional,
+  selectedProfesionales
+} from "../store/actions/profesionales.action";
 
 import Buttons from "../components/Buttons";
 import Cards from "../components/Cards";
-import { PROFESIONALES } from "../data/profesionales";
-import React from "react";
 
-const ProfesionalesScreen = ({ navigation, route }) => {
-  const profesionales = PROFESIONALES.filter(
-    profesional => profesional.categoria == route.params.profesionalID
+const ProfesionalesScreen = ({ navigation }) => {
+  const dispatch = useDispatch();
+  const categoria = useSelector(state => state.categoria.seleted);
+  const profesionales = useSelector(
+    state => state.profesionales.filterProfesionales
   );
+
+  useEffect(() => {
+    console.log(categoria.id);
+    dispatch(filterProfesional(categoria.id));
+  }, []);
+
   const handlerProfesionales = item => {
+    dispatch(selectedProfesionales(item.id));
     navigation.navigate("Detalle", {
-      profesionalID: item.id,
       nombre: item.nombre,
       descripcion: item.descripcion,
       disponibilidad: item.disponibilidad,
@@ -26,10 +38,7 @@ const ProfesionalesScreen = ({ navigation, route }) => {
       onSelected={handlerProfesionales}
     >
       <View style={{ padding: 15, justifyContent: "center" }}>
-        <Image
-          source={item.img}
-          style={styles.img}
-        />
+        <Image source={item.foto} style={styles.img} />
         <Text style={{ padding: 10 }}>
           {item.calificacion}
         </Text>
@@ -38,7 +47,7 @@ const ProfesionalesScreen = ({ navigation, route }) => {
         <Text>
           {item.nombre}
         </Text>
-        <Text style={{width:"25%"}}>
+        <Text style={{ width: "25%" }}>
           {item.descripcion}
         </Text>
       </View>
@@ -60,7 +69,7 @@ const ProfesionalesScreen = ({ navigation, route }) => {
   );
 };
 
-export default ProfesionalesScreen;
+export default connect()(ProfesionalesScreen);
 
 const styles = StyleSheet.create({
   titulo: { fontFamily: "RobotoBlack", padding: 15 },

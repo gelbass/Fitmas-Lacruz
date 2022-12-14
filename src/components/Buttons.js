@@ -4,7 +4,7 @@ import { COLORS } from "../constants/colors";
 
 const Buttons = ({ funtion, newStyles, title }) => {
   return (
-    <Pressable onPress={funtion} style={{ ...styles.button }}>
+    <Pressable onPress={funtion} style={{ ...styles.button ,...newStyles}}>
       <Text style={{ ...styles.buttonText, ...newStyles }}>
         {title}
       </Text>

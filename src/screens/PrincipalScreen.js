@@ -1,17 +1,26 @@
-import { FlatList, Image, Text, View } from "react-native";
+import {} from "react-native";
+
+import { FlatList, Image, Text, TouchableOpacity, View } from "react-native";
+import { connect, useDispatch, useSelector } from "react-redux";
 
 import Buttons from "../components/Buttons";
-import { CATEGORIAS } from "../data/categorias";
+import { COLORS } from "../constants/colors";
 import Cards from "../components/Cards";
 import Styles from "./styles";
+import { selectedCategoria } from "../store/actions/categoria.action";
 
-const PrincipalScreen = ({ navigation, user }) => {
-  const handlerSelectCategoria = (item) => {
+const PrincipalScreen = ({ navigation }) => {
+  const dispatch = useDispatch();
+  const categorias = useSelector(state => state.categorias.categorias);
+
+  const handlerSelectCategoria = item => {
+    // console.log(dispatch(selectedCategoria(item.id)));
+    dispatch(selectedCategoria(item));
     navigation.navigate("Profesionales", {
-      profesionalID: item.id,
-      nombre: item.nombre,
+      nombre: item.nombre
     });
   };
+
   const renderCategorias = ({ item }) =>
     <Cards
       newStyles={{
@@ -22,10 +31,7 @@ const PrincipalScreen = ({ navigation, user }) => {
       onSelected={handlerSelectCategoria}
     >
       <View style={{ flexDirection: "row", paddingTop: 10 }}>
-        <Image
-          source={item.img}
-          style={styles.img}
-        />
+        <Image source={item.img} style={styles.img} />
         <View>
           <Text
             style={{
@@ -56,30 +62,24 @@ const PrincipalScreen = ({ navigation, user }) => {
       >
         {item.detalle}
       </Text>
+      {/* <TouchableOpacity item={item} onSelected={handlerSelectCategoria}> */}
+      <Buttons
+        title={item.titulo}
+        newStyles={{
+          width: "90%",
+          alignItems: "center",
+          backgroundColor: COLORS.nativo,
+          color: COLORS.blanco
+        }}
+        // funtion={() => handlerSelectCategoria(item)}
+      />
+      {/* </TouchableOpacity> */}
     </Cards>;
 
   return (
     <View style={{ justifyContent: "center" }}>
-      <Text
-        style={{
-          ...styles.text,
-          fontFamily: "RobotoBlack",
-          fontSize: 20
-        }}
-      >
-        Bienvenido {user}
-      </Text>
-      <Text
-        style={{
-          ...styles.text,
-          fontFamily: "RobotoBlack",
-          fontSize: 20
-        }}
-      >
-        Selecciona un servicio
-      </Text>
       <FlatList
-        data={CATEGORIAS}
+        data={categorias}
         keyExtractor={item => item.id}
         renderItem={renderCategorias}
       />
@@ -87,6 +87,6 @@ const PrincipalScreen = ({ navigation, user }) => {
   );
 };
 
-export default PrincipalScreen;
+export default connect()(PrincipalScreen);
 
 const styles = Styles;

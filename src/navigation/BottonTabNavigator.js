@@ -1,11 +1,10 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 
 import Buscar from "../screens/Buscar";
 import { COLORS } from "../constants/colors";
 import Favoritos from "../screens/Favoritos";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { NavigationContainer } from "@react-navigation/native";
-import Perfil from "../screens/PerfilScreen";
 import PerfilScreen from "../screens/PerfilScreen";
 import PersonalNavigator from "./PersonalNavigator";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -20,6 +19,7 @@ export default (BottonTabNavigator = ({ loggOut }) => {
         screenOptions={{
           headerShown: false,
           tabBarActiveTintColor: COLORS.secundario,
+          tabBarInactiveTintColor: COLORS.nativo,
           tabBarStyle: styles.tabBar
         }}
       >
@@ -68,7 +68,6 @@ export default (BottonTabNavigator = ({ loggOut }) => {
 const styles = StyleSheet.create({
   tabBar: {
     backgroundColor: COLORS.primario,
-    color: COLORS.nativo,
     height: "10%",
     paddingBottom: 10
   },

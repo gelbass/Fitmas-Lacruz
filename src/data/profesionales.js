@@ -3,7 +3,7 @@ export const PROFESIONALES = [
     id: 1,
     categoria: 1,
     nombre: "Maria López",
-    foto: "../assets/img/img.jpg",
+    foto: require('../assets/img/img.jpg'),
     descripcion:
       "Soy nutricionista deportiva egresada de la UNR. Mi objetivo es que tu lleves tu cuerpo al límite.",
     calificacion: 5,
@@ -38,7 +38,7 @@ export const PROFESIONALES = [
     id: 2,
     categoria: 1,
     nombre: "Ramón Torres",
-    foto: "../assets/img/img.jpg",
+    foto: require('../assets/img/img.jpg'),
     descripcion:
       "Soy nutricionista de la UBA. Me especializo en trabajar con atletas de alto rendimiento y todos aquellos que quieran ir por más.",
     calificacion: 3,
@@ -73,7 +73,7 @@ export const PROFESIONALES = [
     id: 3,
     categoria: 1,
     nombre: "Lucía Perez",
-    foto: "../assets/img/img.jpg",
+    foto: require('../assets/img/img.jpg'),
     descripcion:
       "Soy nutricionista de la UBA. Me especializo en trabajar con atletas de alto rendimiento y todos aquellos que quieran ir por más.",
     calificacion: 2,
@@ -108,7 +108,7 @@ export const PROFESIONALES = [
     id: 4,
     categoria: 2,
     nombre: "Juan Mendez",
-    foto: "../assets/img/img.jpg",
+    foto: require('../assets/img/img.jpg'),
     descripcion:
       "Soy entrenador personal especializado en crossfit y funcional. Me he he formado en la universidad de Atlanta.",
     calificacion: 5,
@@ -143,7 +143,7 @@ export const PROFESIONALES = [
     id: 5,
     categoria: 2,
     nombre: "Luis Altuve",
-    foto: "../assets/img/img.jpg",
+    foto: require('../assets/img/img.jpg'),
     descripcion:
       "Personal training especializado en el trabajo con deportista de alto rendimiento. Busco que cada uno supere sus límites.",
     calificacion: 3,
@@ -178,7 +178,7 @@ export const PROFESIONALES = [
     id: 6,
     categoria: 2,
     nombre: "Ana Ramirez",
-    foto: "../assets/img/img.jpg",
+    foto: require('../assets/img/img.jpg'),
     descripcion:
       "Soy entrenador personal especializado en crossfit y funcional. Me he he formado en la universidad de Atlanta.",
     calificacion: 2,
