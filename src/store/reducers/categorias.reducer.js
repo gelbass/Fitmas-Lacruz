@@ -7,8 +7,12 @@ const initialState = {
 };
 
 const CategoriasReducer = (state = initialState, action) => {
-  switch (action.tipo) {
+  console.log("CategoriasReducer");
+  console.log(state);
+  console.log(state.type);
+  switch (action.type) {
     case SELECTED_CATEGORIA:
+      console.log("Entro SELECTED_CATEGORIA");
       const IndexCategoria = state.categorias.findIndex(
         categ => categ.id === action.categoriaID
       );
@@ -16,6 +20,7 @@ const CategoriasReducer = (state = initialState, action) => {
       return { ...state, selected: state.categorias[IndexCategoria] };
 
     default:
+      console.log("Entro default");
       return state;
   }
 };

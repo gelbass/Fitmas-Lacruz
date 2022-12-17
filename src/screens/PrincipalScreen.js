@@ -12,13 +12,11 @@ const PrincipalScreen = ({ navigation }) => {
   const categorias = useSelector(state => state.categorias.categorias);
 
   const handlerSelectCategoria = item => {
-    console.log(item);
     dispatch(selectedCategoria(item.id));
-    console.log(item);
     navigation.navigate("Profesionales", {
       nombre: item.nombre
     });
-    console.log(item);
+
   };
 
   const renderCategorias = ({ item }) =>

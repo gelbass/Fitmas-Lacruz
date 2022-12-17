@@ -11,20 +11,22 @@ import Cards from "../components/Cards";
 
 const ProfesionalesScreen = ({ navigation }) => {
   const dispatch = useDispatch();
-  const categoria = useSelector(state => state.categoria.seleted);
+  const categoria = useSelector(state => state.categorias.selected);
   const profesionales = useSelector(
     state => state.profesionales.filterProfesionales
   );
-
   useEffect(() => {
-    console.log(categoria.id);
+    // console.log(filterProfesional(categoria.id));
+    console.log(dispatch(filterProfesional(categoria.id)));
     dispatch(filterProfesional(categoria.id));
   }, []);
 
   const handlerProfesionales = item => {
+    console.log("handlerProfesionales");
+    console.log(item);
     dispatch(selectedProfesionales(item.id));
     navigation.navigate("Detalle", {
-      nombre: item.nombre,
+      nombre: item.nombre
       // descripcion: item.descripcion,
       // disponibilidad: item.disponibilidad,
       // formacion: item.formacion,

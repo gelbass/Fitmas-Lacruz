@@ -7,12 +7,15 @@ import { PROFESIONALES } from "../../data/profesionales";
 
 const initialState = {
   profesionales: PROFESIONALES,
-  filterProfesionales: [],
+  filterProfesionales: [{}],
   selected: null
 };
 
 const ProfesionalesReducer = (state = initialState, action) => {
-  switch (action.tipo) {
+  console.log("ProfesionalesReducer");
+  console.log(state);
+  console.log(state.type);
+  switch (action.type) {
     case SELECTED_PROFESIONAL:
       return {
         ...state,
