@@ -1,20 +1,21 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View } from "react-native";
 
-import React from 'react'
-import { useSelector } from 'react-redux'
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
 
 const DetalleProfesional = () => {
+  const profesional = useSelector(state => state.profesionales.selected);
+  // useEffect(() => {console.log(profesional);}, []);
 
-  const profesional = useSelector((state) => state.profesional.selected);
-  
-  
   return (
     <View>
-      <Text>{profesional.nombre}</Text>
+      <Text>
+        {profesional.nombre}
+      </Text>
     </View>
-  )
-}
+  );
+};
 
-export default DetalleProfesional
+export default DetalleProfesional;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});

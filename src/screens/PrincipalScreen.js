@@ -20,13 +20,13 @@ const PrincipalScreen = ({ navigation }) => {
   };
 
   const renderCategorias = ({ item }) =>
-    <Cards
+  <Cards
       newStyles={{
         paddingLeft: 10,
         height: 250
       }}
       item={item}
-      onSelected={handlerSelectCategoria}
+      onSelected={()=>{}}
     >
       <View style={{ flexDirection: "row", paddingTop: 10 }}>
         <Image source={item.img} style={styles.img} />
@@ -69,7 +69,7 @@ const PrincipalScreen = ({ navigation }) => {
           backgroundColor: COLORS.nativo,
           color: COLORS.blanco
         }}
-        // funtion={() => handlerSelectCategoria(item)}
+        funtion={() => handlerSelectCategoria(item)}
       />
       {/* </TouchableOpacity> */}
     </Cards>;

@@ -27,7 +27,7 @@ export default (PersonalNavigator = ({ onLoggout }) => {
         options={({ route }) => ({ title: route.params.nombre })}
       />
       <Stack.Screen name="Agenda" component={AgendarProfesional}/>
-      <Stack.Screen name="Detalle" component={DetalleProfesional}/>
+      <Stack.Screen name="Detalle" component={DetalleProfesional} options={{ title: "FitMas" }}/>
     </Stack.Navigator>
   );
 });
