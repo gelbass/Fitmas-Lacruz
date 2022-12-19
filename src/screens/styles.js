@@ -1,4 +1,4 @@
-import  { COLORS } from "../constants/colors";
+import { COLORS } from "../constants/colors";
 import { StyleSheet } from "react-native";
 
 const Styles = StyleSheet.create({
@@ -8,9 +8,9 @@ const Styles = StyleSheet.create({
   },
   text: {
     padding: 10,
-    textAlign:"center",
+    textAlign: "center",
     justifyContent: "center",
-    color: COLORS.font,
+    color: COLORS.font
   },
 
   containerButton: {
@@ -21,14 +21,19 @@ const Styles = StyleSheet.create({
     alignItems: "flex-end",
     width: "100%",
     height: "100%",
-    paddingBottom: "20%",
+    paddingBottom: "20%"
   },
-  img:{
+  img: {
     width: 90,
     height: 90,
     borderRadius: 50,
-    borderWidth: 1,
-    borderColor: "#000"
+    borderWidth: 1
+  },
+  imgGrande: {
+    marginTop: 10,
+    width: "100%",
+    height: 140,
+    borderRadius: 10,
   }
 });
 

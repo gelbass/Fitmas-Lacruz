@@ -16,17 +16,17 @@ const PrincipalScreen = ({ navigation }) => {
     navigation.navigate("Profesionales", {
       nombre: item.nombre
     });
-
   };
 
   const renderCategorias = ({ item }) =>
-  <Cards
+    <Cards
       newStyles={{
-        paddingLeft: 10,
-        height: 250
+        padding: 15,
+        margin: 18,
+        height: "auto"
       }}
       item={item}
-      onSelected={()=>{}}
+      onSelected={() => {}}
     >
       <View style={{ flexDirection: "row", paddingTop: 10 }}>
         <Image source={item.img} style={styles.img} />
@@ -35,7 +35,9 @@ const PrincipalScreen = ({ navigation }) => {
             style={{
               ...styles.text,
               fontFamily: "RobotoMedium",
-              textAlign: "left"
+              textAlign: "left",
+              fontSize: 20,
+              paddingBottom: 1
             }}
           >
             {item.nombre}
@@ -44,30 +46,35 @@ const PrincipalScreen = ({ navigation }) => {
             style={{
               ...styles.text,
               fontFamily: "RobotoMedium",
-              textAlign: "left"
+              textAlign: "left",
+              fontSize: 12,
+              paddingTop: 0
             }}
           >
             {item.slogan}
           </Text>
         </View>
       </View>
+      <Image source={item.imgPrincipal} style={styles.imgGrande} />
       <Text
         style={{
           ...styles.text,
           fontFamily: "RobotoMedium",
-          textAlign: "center"
+          textAlign: "center",
+          color: COLORS.primario
         }}
       >
         {item.detalle}
       </Text>
       {/* <TouchableOpacity item={item} onSelected={handlerSelectCategoria}> */}
       <Buttons
-        title={item.titulo}
+        title={`¡${item.titulo.toUpperCase()}!`}
         newStyles={{
           width: "90%",
           alignItems: "center",
           backgroundColor: COLORS.nativo,
-          color: COLORS.blanco
+          color: COLORS.blanco,
+          borderRadius: 18,
         }}
         funtion={() => handlerSelectCategoria(item)}
       />

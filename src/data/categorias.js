@@ -6,7 +6,7 @@ export const CATEGORIAS = [
     img: require('../assets/img/nutricionista.jpg'),
     slogan: "¡Llegó el momento!",
     imgPrincipal: require('../assets/img/1Nut.png'),
-    titulo: "Quiero un Nutricionista"
+    titulo: "¡Quiero un Nutricionista!"
   },
   {
     id: 2,
@@ -15,6 +15,6 @@ export const CATEGORIAS = [
     img: require('../assets/img/entrenador.png'),
     slogan: "¡Llegó el momento!",
     imgPrincipal: require('../assets/img/2Entr.png'),
-    titulo: "Quiero un Entrenador"
+    titulo: "¡Quiero un Entrenador!"
   }
 ];
