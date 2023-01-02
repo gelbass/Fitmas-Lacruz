@@ -13,7 +13,7 @@ const PrincipalScreen = ({ navigation }) => {
 
   const handlerSelectCategoria = item => {
     dispatch(selectedCategoria(item.id));
-    navigation.navigate("Profesionales", {
+    navigation.navigate("ListadoProfesionales", {
       nombre: item.nombre
     });
   };
@@ -66,7 +66,6 @@ const PrincipalScreen = ({ navigation }) => {
       >
         {item.detalle}
       </Text>
-      {/* <TouchableOpacity item={item} onSelected={handlerSelectCategoria}> */}
       <Buttons
         title={`¡${item.titulo.toUpperCase()}!`}
         newStyles={{
@@ -78,7 +77,6 @@ const PrincipalScreen = ({ navigation }) => {
         }}
         funtion={() => handlerSelectCategoria(item)}
       />
-      {/* </TouchableOpacity> */}
     </Cards>;
 
   return (

@@ -6,8 +6,7 @@ import {
   selectedProfesionales
 } from "../store/actions/profesionales.action";
 
-import Buttons from "../components/Buttons";
-import Cards from "../components/Cards";
+import TouchCards from "../components/TouchCards";
 
 const ProfesionalesScreen = ({ navigation }) => {
   const dispatch = useDispatch();
@@ -27,7 +26,7 @@ const ProfesionalesScreen = ({ navigation }) => {
     });
   };
   const renderProfesionales = ({ item }) =>
-    <Cards
+    <TouchCards
       newStyles={{ flexDirection: "row", paddingTop: 10, height: 150 }}
       item={item}
       onSelected={handlerProfesionales}
@@ -46,7 +45,7 @@ const ProfesionalesScreen = ({ navigation }) => {
           {item.descripcion}
         </Text>
       </View>
-    </Cards>;
+    </TouchCards>;
 
   return (
     <View>
@@ -55,11 +54,6 @@ const ProfesionalesScreen = ({ navigation }) => {
         keyExtractor={item => item.id}
         renderItem={renderProfesionales}
       />
-      {/* <Buttons
-        funtion={() => navigation.navigate("Home")}
-        newStyles={{ fontFamily: "RobotoMedium" }}
-        title={"Ir al Inicio"}
-      /> */}
     </View>
   );
 };

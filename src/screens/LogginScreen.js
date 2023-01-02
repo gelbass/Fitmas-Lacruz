@@ -14,7 +14,7 @@ const LogginScreen = ({ onIsLoggin,onExit, user, pass,fonts }) => {
         FitMas
       </Text>
       <Inputs fonts={fonts} text={"Usuario"} value={user}/>
-      <Inputs fonts={fonts} text={"Contraseña"} value={pass}/>
+      <Inputs fonts={fonts} text={"Contraseña"} value={pass} password={true}/>
       <View
         style={{
           flexDirection: "row",
@@ -27,12 +27,12 @@ const LogginScreen = ({ onIsLoggin,onExit, user, pass,fonts }) => {
       >
         <Buttons
           funtion={()=>onExit(false)}
-          newStyles={{ fontFamily: "RobotoMedium" }}
+          newStyles={{ fontFamily: "RobotoMedium",justifyContent: "center", alignSelf:"auto" }}
           title={"SALIR"}
         />
         <Buttons
           funtion={()=>onIsLoggin(false)}
-          newStyles={{ fontFamily: "RobotoMedium" }}
+          newStyles={{ fontFamily: "RobotoMedium",justifyContent: "center", alignSelf:"auto" }}
           title={"INICIAR SESIÓN"}
         />
       </View>

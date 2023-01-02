@@ -1,5 +1,6 @@
 import { StyleSheet, View } from "react-native";
 
+import Agendas from "../screens/Agendas";
 import Buscar from "../screens/Buscar";
 import { COLORS } from "../constants/colors";
 import Favoritos from "../screens/Favoritos";
@@ -7,6 +8,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { NavigationContainer } from "@react-navigation/native";
 import PerfilScreen from "../screens/PerfilScreen";
 import PersonalNavigator from "./PersonalNavigator";
+import UbicacionScreen from "../screens/UbicacionScreen";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 const BottonTabs = createBottomTabNavigator();
@@ -42,24 +44,43 @@ export default (BottonTabNavigator = ({ loggOut }) => {
           name="Buscar"
           component={Buscar}
           options={{
-            tabBarIcon: ({ focus }) => <Ionicons name="search" size={30} style={styles.icono}/>
+            tabBarIcon: ({ focus }) =>
+              <Ionicons name="search" size={30} style={styles.icono} />
           }}
         />
         <BottonTabs.Screen
           name="Favoritos"
           component={Favoritos}
           options={{
-            tabBarIcon: ({ focus }) => <Ionicons name="star" size={30} style={styles.icono}/>
+            tabBarIcon: ({ focus }) =>
+              <Ionicons name="star" size={30} style={styles.icono} />
+          }}
+        />
+        <BottonTabs.Screen
+          name="Agendas"
+          component={Agendas}
+          options={{
+            tabBarIcon: ({ focus }) =>
+              <Ionicons name="calendar" size={30} style={styles.icono} />
           }}
         />
         <BottonTabs.Screen
           name="Perfil"
           options={{
-            tabBarIcon: ({ focus }) => <Ionicons name="person" size={30} style={styles.icono}/>
+            tabBarIcon: ({ focus }) =>
+              <Ionicons name="person" size={30} style={styles.icono} />
           }}
         >
           {props => <PerfilScreen {...props} onLoggout={loggOut} />}
         </BottonTabs.Screen>
+        {/* <BottonTabs.Screen
+          name="UBICACION"
+          component={UbicacionScreen}
+          options={{
+            tabBarIcon: ({ focus }) =>
+              <Ionicons name="calendar" size={30} style={styles.icono} />
+          }}
+        /> */}
       </BottonTabs.Navigator>
     </NavigationContainer>
   );
@@ -71,5 +92,5 @@ const styles = StyleSheet.create({
     height: "10%",
     paddingBottom: 10
   },
-  icono: {color:COLORS.nativo}
+  icono: { color: COLORS.nativo }
 });

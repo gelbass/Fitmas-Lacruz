@@ -2,17 +2,18 @@ import { StyleSheet, TouchableOpacity, View } from "react-native";
 
 import { COLORS } from "../constants/colors";
 
-const Cards = ({ children, newStyles}) => {
+const TouchCards = ({ children, newStyles, item, onSelected }) => {
   return (
-    <View
+    <TouchableOpacity
       style={{ ...styles.container, ...newStyles }}
+      onPress={() => onSelected(item)}
     >
       {children}
-    </View>
+    </TouchableOpacity>
   );
 };
 
-export default Cards;
+export default TouchCards;
 
 const styles = StyleSheet.create({
   container: {

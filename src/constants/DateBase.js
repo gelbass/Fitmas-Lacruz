@@ -1,0 +1,2 @@
+export const URL_API ="https://fitmas-9d1f3-default-rtdb.firebaseio.com";
+export const URL_AUTH_SIGNUP = "https://identitytoolkit.googleapis.com/v1/accounts:signInWithCustomToken?key=AIzaSyBsa0F_YTDVp4ReOQVN7nVBWC1VAkMSMyw";

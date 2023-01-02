@@ -7,13 +7,15 @@ export const PROFESIONALES = [
     descripcion:
       "Soy nutricionista deportiva egresada de la UNR. Mi objetivo es que tu lleves tu cuerpo al límite.",
     calificacion: 5,
-    formacion: "Formacion academica",
+    bio: "Soy nutricionista deportiva egresada de la UNR. Mi objetivo es que tu lleves tu cuerpo al límite. Mi metodología se basa en que puedas cambiar tus hábitos de manera trascendental. Sacando de tu cabeza la idea de hacer dieta y que establezcas una relación sana con la comida.",
+    estudios: [{
+      titulo: "Licenciatura en nutrición",
+      universidad: "Universidad Nacional de Rosario"
+    }],
     ubicacion: "direccion",
     disponibilidad: [
       {
-        dia: 10,
-        mes: 12,
-        anio: 2022,
+        fecha:"2022-12-10",
         horarios: [
           { turno: "Mañana", hora: "08:30" },
           { turno: "Mañana", hora: "10:30" },
@@ -22,9 +24,7 @@ export const PROFESIONALES = [
         ]
       },
       {
-        dia: 5,
-        mes: 1,
-        anio: 2023,
+        fecha:"2023-01-01",
         horarios: [
           { turno: "Mañana", hora: "08:30" },
           { turno: "Mañana", hora: "10:30" },
@@ -42,13 +42,15 @@ export const PROFESIONALES = [
     descripcion:
       "Soy nutricionista de la UBA. Me especializo en trabajar con atletas de alto rendimiento y todos aquellos que quieran ir por más.",
     calificacion: 3,
-    formacion: "Formacion academica",
+    bio: "Soy nutricionista deportiva egresada de la UNR. Mi objetivo es que tu lleves tu cuerpo al límite. Mi metodología se basa en que puedas cambiar tus hábitos de manera trascendental. Sacando de tu cabeza la idea de hacer dieta y que establezcas una relación sana con la comida.",
+    estudios: [{
+      titulo: "Licenciatura en nutrición",
+      universidad: "Universidad Nacional de Rosario"
+    }],
     ubicacion: "direccion",
     disponibilidad: [
       {
-        dia: 10,
-        mes: 12,
-        anio: 2022,
+        fecha:"2022-12-10",
         horarios: [
           { turno: "Mañana", hora: "08:30" },
           { turno: "Mañana", hora: "10:30" },
@@ -57,9 +59,7 @@ export const PROFESIONALES = [
         ]
       },
       {
-        dia: 5,
-        mes: 1,
-        anio: 2023,
+        fecha:"2023-01-01",
         horarios: [
           { turno: "Mañana", hora: "08:30" },
           { turno: "Mañana", hora: "10:30" },
@@ -77,13 +77,15 @@ export const PROFESIONALES = [
     descripcion:
       "Soy nutricionista de la UBA. Me especializo en trabajar con atletas de alto rendimiento y todos aquellos que quieran ir por más.",
     calificacion: 2,
-    formacion: "Formacion academica",
+    bio: "Soy nutricionista deportiva egresada de la UNR. Mi objetivo es que tu lleves tu cuerpo al límite. Mi metodología se basa en que puedas cambiar tus hábitos de manera trascendental. Sacando de tu cabeza la idea de hacer dieta y que establezcas una relación sana con la comida.",
+    estudios: [{
+      titulo: "Licenciatura en nutrición",
+      universidad: "Universidad Nacional de Rosario"
+    }],
     ubicacion: "direccion",
     disponibilidad: [
       {
-        dia: 10,
-        mes: 12,
-        anio: 2022,
+        fecha:"2022-12-10",
         horarios: [
           { turno: "Mañana", hora: "08:30" },
           { turno: "Mañana", hora: "10:30" },
@@ -92,9 +94,7 @@ export const PROFESIONALES = [
         ]
       },
       {
-        dia: 5,
-        mes: 1,
-        anio: 2023,
+        fecha:"2023-01-01",
         horarios: [
           { turno: "Mañana", hora: "08:30" },
           { turno: "Mañana", hora: "10:30" },
@@ -112,13 +112,15 @@ export const PROFESIONALES = [
     descripcion:
       "Soy entrenador personal especializado en crossfit y funcional. Me he he formado en la universidad de Atlanta.",
     calificacion: 5,
-    formacion: "Formacion academica",
+    bio: "Soy nutricionista deportiva egresada de la UNR. Mi objetivo es que tu lleves tu cuerpo al límite. Mi metodología se basa en que puedas cambiar tus hábitos de manera trascendental. Sacando de tu cabeza la idea de hacer dieta y que establezcas una relación sana con la comida.",
+    estudios: [{
+      titulo: "Licenciatura en nutrición",
+      universidad: "Universidad Nacional de Rosario"
+    }],
     ubicacion: "direccion",
     disponibilidad: [
       {
-        dia: 10,
-        mes: 12,
-        anio: 2022,
+        fecha:"2022-12-10",
         horarios: [
           { turno: "Mañana", hora: "08:30" },
           { turno: "Mañana", hora: "10:30" },
@@ -127,9 +129,7 @@ export const PROFESIONALES = [
         ]
       },
       {
-        dia: 5,
-        mes: 1,
-        anio: 2023,
+        fecha:"2023-01-01",
         horarios: [
           { turno: "Mañana", hora: "08:30" },
           { turno: "Mañana", hora: "10:30" },
@@ -147,13 +147,15 @@ export const PROFESIONALES = [
     descripcion:
       "Personal training especializado en el trabajo con deportista de alto rendimiento. Busco que cada uno supere sus límites.",
     calificacion: 3,
-    formacion: "Formacion academica",
+    bio: "Soy nutricionista deportiva egresada de la UNR. Mi objetivo es que tu lleves tu cuerpo al límite. Mi metodología se basa en que puedas cambiar tus hábitos de manera trascendental. Sacando de tu cabeza la idea de hacer dieta y que establezcas una relación sana con la comida.",
+    estudios: [{
+      titulo: "Licenciatura en nutrición",
+      universidad: "Universidad Nacional de Rosario"
+    }],
     ubicacion: "direccion",
     disponibilidad: [
       {
-        dia: 10,
-        mes: 12,
-        anio: 2022,
+        fecha:"2022-12-10",
         horarios: [
           { turno: "Mañana", hora: "08:30" },
           { turno: "Mañana", hora: "10:30" },
@@ -162,9 +164,7 @@ export const PROFESIONALES = [
         ]
       },
       {
-        dia: 5,
-        mes: 1,
-        anio: 2023,
+        fecha:"2023-01-01",
         horarios: [
           { turno: "Mañana", hora: "08:30" },
           { turno: "Mañana", hora: "10:30" },
@@ -182,13 +182,15 @@ export const PROFESIONALES = [
     descripcion:
       "Soy entrenador personal especializado en crossfit y funcional. Me he he formado en la universidad de Atlanta.",
     calificacion: 2,
-    formacion: "Formacion academica",
+    bio: "Soy nutricionista deportiva egresada de la UNR. Mi objetivo es que tu lleves tu cuerpo al límite. Mi metodología se basa en que puedas cambiar tus hábitos de manera trascendental. Sacando de tu cabeza la idea de hacer dieta y que establezcas una relación sana con la comida.",
+    estudios: [{
+      titulo: "Licenciatura en nutrición",
+      universidad: "Universidad Nacional de Rosario"
+    }],
     ubicacion: "direccion",
     disponibilidad: [
       {
-        dia: 10,
-        mes: 12,
-        anio: 2022,
+        fecha:"2022-12-10",
         horarios: [
           { turno: "Mañana", hora: "08:30" },
           { turno: "Mañana", hora: "10:30" },
@@ -197,9 +199,7 @@ export const PROFESIONALES = [
         ]
       },
       {
-        dia: 5,
-        mes: 1,
-        anio: 2023,
+        fecha:"2023-01-01",
         horarios: [
           { turno: "Mañana", hora: "08:30" },
           { turno: "Mañana", hora: "10:30" },

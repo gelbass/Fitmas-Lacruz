@@ -22,7 +22,7 @@ export default (PersonalNavigator = ({ onLoggout }) => {
         {props => <PrincipalScreen {...props} onLoggout={onLoggout} />}
       </Stack.Screen>
       <Stack.Screen
-        name="Profesionales"
+        name="ListadoProfesionales"
         component={ProfesionalesScreen}
         options={({ route }) => ({ title: route.params.nombre })}
       />
