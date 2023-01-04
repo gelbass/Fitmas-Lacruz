@@ -19,8 +19,8 @@ const Styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-evenly",
     alignItems:"flex-end",
-    width: "100%",
-    height: "90%",
+    // width: "100%",
+    height: "80%",
     // paddingBottom: "20%"
   },
   img: {

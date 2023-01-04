@@ -3,6 +3,7 @@
     "name": "fitmas",
     "slug": "fitmas",
     "version": "1.0.0",
+    "platforms":["ios","android"],
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -20,11 +21,12 @@
     ],
     "ios": {
       "bundleIdentifier": "com.coderhouse.places",
-      "biuldNumber": "1.0.0",
+      "buildNumber": "1.0.0",
       "supportsTablet": true
     },
     "android": {
       "package": "com.coderhouse.places",
+      "versionCode":1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
