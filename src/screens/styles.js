@@ -17,11 +17,11 @@ const Styles = StyleSheet.create({
     position: "absolute",
     zIndex: 1,
     flexDirection: "row",
-    justifyContent: "space-around",
-    alignItems: "flex-end",
+    justifyContent: "space-evenly",
+    alignItems:"flex-end",
     width: "100%",
-    height: "100%",
-    paddingBottom: "20%"
+    height: "90%",
+    // paddingBottom: "20%"
   },
   img: {
     width: 90,

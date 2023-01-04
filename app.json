@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Fitmas-lacruz",
-    "slug": "Fitmas-lacruz",
+    "name": "fitmas",
+    "slug": "fitmas",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -9,25 +9,43 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#561D74"
     },
     "updates": {
-      "fallbackToCacheTimeout": 0
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/2aaa82f2-0903-417e-bafd-7142aafdc151"
     },
     "assetBundlePatterns": [
       "**/*"
     ],
     "ios": {
+      "bundleIdentifier": "com.coderhouse.places",
+      "biuldNumber": "1.0.0",
       "supportsTablet": true
     },
     "android": {
+      "package": "com.coderhouse.places",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "permitions": [
+        "CAMERA",
+        "ACCES_FINE_LOCATION",
+        "WRITE_EXTERNAL_STORAGE"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "2aaa82f2-0903-417e-bafd-7142aafdc151"
+      }
+    },
+    "owner": "gelbass",
+    "runtimeVersion": {
+      "policy": "sdkVersion"
     }
   }
 }

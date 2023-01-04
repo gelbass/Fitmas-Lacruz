@@ -26,9 +26,9 @@ const PerfilScreen = ({ onLoggout }) => {
     const { status } = await ImagePicker.requestCameraPermissionsAsync();
     if (status !== "granted") {
       Alert.alert(
-        "Permisos Insuficientes",
-        "Necesitas dar permisos a la camara para utilizar desde la aplicación",
-        [{ text: "OK " }]
+        "Permisos insuficientes",
+        "Necesita dar permisos de localizacion para utilizar esta aplicacion",
+        [{ text: "OK" }]
       );
       return false;
     }
@@ -50,8 +50,8 @@ const PerfilScreen = ({ onLoggout }) => {
 
   return (
     <View style={{}}>
-      <Header text={"FitMas"} />
       <ScrollView>
+        <Header text={"FitMas"} />
         <TouchableOpacity
           style={{ alignItems: "center" }}
           onPress={handlerImagen}
@@ -160,15 +160,20 @@ const PerfilScreen = ({ onLoggout }) => {
             Definición. Aumento de masa muscular.
           </Text>
         </Cards>
-        <View>
+        <Cards>
+          <Text>Mis próximas citas</Text>
+        </Cards>
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "center"
+          }}
+        >
           <Buttons
             funtion={() => onLoggout(true)}
-            newStyles={{ fontFamily: "RobotoMedium" }}
+            colorBase={COLORS.buttonColor}
             title={"CERRAR SESIÓN"}
           />
-          <Cards>
-            <Text>Mis próximas citas</Text>
-          </Cards>
         </View>
       </ScrollView>
     </View>

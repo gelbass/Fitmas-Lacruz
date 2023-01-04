@@ -16,7 +16,7 @@ const DetalleProfesional = ({ navigation }) => {
   const estudios = () => {};
 
   return (
-    <ScrollView >
+    <ScrollView>
       <View style={styles.container}>
         <View style={styles.containerProfesional}>
           <Image source={profesional.foto} style={styles.img} />
@@ -62,7 +62,7 @@ const DetalleProfesional = ({ navigation }) => {
                   fontSize: 11.8481,
                   lineHeight: 14,
                   letterSpacing: 0.0025,
-                  fontWeight: "700",
+                  fontWeight: "700"
                 }}
               >
                 {estudio.titulo}
@@ -75,7 +75,7 @@ const DetalleProfesional = ({ navigation }) => {
                 lineHeight: 13.88,
                 letterSpacing: 0.0025,
                 marginLeft: "8.5%",
-                paddingTop: 0,
+                paddingTop: 0
               }}
             >
               {estudio.universidad}
@@ -83,19 +83,26 @@ const DetalleProfesional = ({ navigation }) => {
           </View>
         )}
       </View>
-      <Buttons
-        title={"VER CALENDARIO"}
-        newStyles={{
-          width: "65%",
-          backgroundColor: COLORS.buttonColor,
-          color: COLORS.primario,
-          fontFamily: "RobotoMedium",
-          fontSize: 14,
-          fontWeight: "500"
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "center",
         }}
-        icono={<Ionicons name="calendar" size={20} />}
-        funtion={handlerCaledario}
-      />
+      >
+        <Buttons
+          title={"VER CALENDARIO"}
+          newStyles={{
+            width: "50%"
+          }}
+          colorBase={COLORS.buttonColor}
+          newStylesText={{
+            fontSize: 14,
+            fontWeight: "500"
+          }}
+          icono={<Ionicons name="calendar" size={20} />}
+          funtion={handlerCaledario}
+        />
+      </View>
     </ScrollView>
   );
 };

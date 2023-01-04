@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
 
 import Buttons from "../components/Buttons";
+import {COLORS} from '../constants/colors';
 import Header from "../components/Header";
 import Inputs from "../components/Inputs";
 import React from "react";
@@ -19,20 +20,17 @@ const LogginScreen = ({ onIsLoggin,onExit, user, pass,fonts }) => {
         style={{
           flexDirection: "row",
           justifyContent: "space-around",
-          alignContent: "flex-end",
-          width: "100%",
-          height: "100%",
           paddingBottom: "20%"
         }}
       >
         <Buttons
           funtion={()=>onExit(false)}
-          newStyles={{ fontFamily: "RobotoMedium",justifyContent: "center", alignSelf:"auto" }}
+          colorBase={COLORS.buttonColor}
           title={"SALIR"}
         />
         <Buttons
           funtion={()=>onIsLoggin(false)}
-          newStyles={{ fontFamily: "RobotoMedium",justifyContent: "center", alignSelf:"auto" }}
+          colorBase={COLORS.buttonColor}
           title={"INICIAR SESIÓN"}
         />
       </View>

@@ -71,10 +71,10 @@ const PrincipalScreen = ({ navigation }) => {
         newStyles={{
           width: "90%",
           alignItems: "center",
-          backgroundColor: COLORS.nativo,
-          color: COLORS.blanco,
           borderRadius: 18,
         }}
+        colorBase={COLORS.nativo}
+        newStylesText={{color:COLORS.blanco}}
         funtion={() => handlerSelectCategoria(item)}
       />
     </Cards>;

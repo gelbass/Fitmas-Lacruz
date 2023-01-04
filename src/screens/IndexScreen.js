@@ -19,12 +19,12 @@ const IndexScreen = ({ onGoTologgin, onGoToRegister , navigation }) => {
       <View style={styles.containerButton}>
         <Buttons
           funtion={() => onGoToRegister(true)}
-          newStyles={{ fontFamily: "RobotoMedium", justifyContent: "center", alignSelf:"auto", }}
+          colorBase={COLORS.buttonColor}
           title={"REGÍSTRATE"}
         />
         <Buttons
           funtion={onGoTologgin}
-          newStyles={{ fontFamily: "RobotoMedium", justifyContent: "center", alignSelf:"auto", }}
+          colorBase={COLORS.buttonColor}
           title={"INICIAR SESIÓN"}
         />
       </View>

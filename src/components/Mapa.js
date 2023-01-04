@@ -21,7 +21,9 @@ const Mapa = ({ location, children, newStyle }) => {
               longitude: location.lng,
               latitudeDelta: 0.2,
               longitudeDelta: 0.3
-            }}maxZoomLevel={10}
+            }}
+            // maxZoomLevel={20}
+            minZoomLevel={5}
           >
             <Marker
               title="Aqui estoy"

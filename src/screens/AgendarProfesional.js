@@ -19,11 +19,11 @@ const AgendarProfesional = () => {
     let year = new Date().getFullYear();
     return year + "-" + month + "-" + date;
   };
-  const [newAenda, setNewAgenda]  = useState({});
+  const [newAenda, setNewAgenda] = useState({});
   const [fecha, setFecha] = useState(getCurrentDate);
   const [hora, setHora] = useState("8:30");
   console.log(profesional);
-  const handlerAddAgenda = (profesional) =>
+  const handlerAddAgenda = profesional =>
     dispatch(
       addAgenda(
         setNewAgenda({
@@ -53,25 +53,11 @@ const AgendarProfesional = () => {
               : <Text>NO HAY CUPO</Text>
         )}
         <View style={{ flexDirection: "row" }}>
-          <Buttons
-            title={"CANCELAR"}
-            newStyles={{
-              backgroundColor: COLORS.buttonColor,
-              color: COLORS.primario,
-              fontFamily: "RobotoMedium",
-              fontSize: 14,
-              fontWeight: "500"
-            }}
-          />
+          <Buttons title={"CANCELAR"} colorBase={COLORS.buttonColor} />
           <Buttons
             title={"ACEPTAR"}
-            newStyles={{
-              backgroundColor: COLORS.nativo,
-              color: COLORS.buttonColor,
-              fontFamily: "RobotoMedium",
-              fontSize: 14,
-              fontWeight: "500"
-            }}
+            colorBase={COLORS.nativo}
+            newStylesText={{ color: COLORS.buttonColor }}
             funtion={handlerAddAgenda}
           />
         </View>
