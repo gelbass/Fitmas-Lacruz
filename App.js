@@ -1,8 +1,9 @@
 import BottonTabNavigator from "./src/navigation/BottonTabNavigator";
 import { COLORS } from "./src/constants/colors";
-import IndexScreen from "./src/screens/IndexScreen";
+// import IndexScreen from "./src/screens/IndexScreen";
 import LogginNavigator from "./src/navigation/LogginNavigator";
 import LogginScreen from "./src/screens/LogginScreen";
+import MainNavigator from "./src/navigation"
 import { Provider } from "react-redux";
 import RegisterScreen from "./src/screens/RegistrarScreen";
 import { View } from "react-native";
@@ -36,7 +37,7 @@ export default function App() {
   if (!loaded) {
     return null;
   }
-  let content = (
+/*   let content = (
     <IndexScreen onGoTologgin={handleGoTologgin} onGoToRegister={handleGoToRegister}/>
     // <LogginNavigator loggOut={handleIsLoggin}/>
   );
@@ -52,12 +53,13 @@ export default function App() {
     ));
 
   isLogueado || (content = <BottonTabNavigator loggOut={handleIsLoggin} />);
-
+ */
   return (
     <Provider store={store}>
-      <View style={{ flex: 1, backgroundColor: COLORS.backgroundColor }}>
+      {/* <View style={{ flex: 1, backgroundColor: COLORS.backgroundColor }}>
         {content}
-      </View>
+      </View> */}
+      <MainNavigator />
     </Provider>
   );
 }

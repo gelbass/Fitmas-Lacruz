@@ -1,29 +1,29 @@
 import { Image, View } from "react-native";
+import React, { useState } from "react";
 
 import Buttons from "../components/Buttons";
 import { COLORS } from "../constants/colors";
-import React from "react";
-import Styles from "./styles";
+import Styles from "../screens/styles";
 
-const IndexScreen = ({ onGoTologgin, onGoToRegister , navigation }) => {
-  
-  const goToLoggin =() =>{
-    navigation.navigate("loggin", {
-      // nombre: item.nombre
-    });
-  }
+const IndexScreen = ({ navigation }) => {
+  const handlerLoggin = () => {
+    navigation.navigate("loggin");
+  };
+  const handlerRegister = () => {
+    navigation.navigate("register");
+  };
+
   return (
     <View>
-      <View style={{ height: "5%", backgroundColor: COLORS.primario }} />
       <Image source={require("../assets/img/index.jpg")} />
       <View style={styles.containerButton}>
         <Buttons
-          funtion={() => onGoToRegister(true)}
+          funtion={handlerRegister}
           colorBase={COLORS.buttonColor}
           title={"REGÍSTRATE"}
         />
         <Buttons
-          funtion={onGoTologgin}
+          funtion={handlerLoggin}
           colorBase={COLORS.buttonColor}
           title={"INICIAR SESIÓN"}
         />

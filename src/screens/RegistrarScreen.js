@@ -1,22 +1,117 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Alert, Text, View } from "react-native";
+import React, { useCallback, useReducer } from "react";
 
 import Buttons from "../components/Buttons";
 import { COLORS } from "../constants/colors";
-import Header from "../components/Header";
 import Inputs from "../components/Inputs";
-import React from "react";
-import Styles from "./styles";
+import { registro } from "../store/actions/autenticacion.actions";
+import { useDispatch } from "react-redux";
 
-const RegisterScreen = ({ onIsLoggin,onExit, user, pass,fonts }) => {
+const FORM_INPUT_UPDATE = "FORM_INPUT_UPDATE";
+
+const formReducer = (state, action) => {
+  console.log(action);
+  if (action.type === FORM_INPUT_UPDATE) {
+    const updatedValues = {
+      ...state.inputValues,
+      [action.input]: action.value
+    };
+    const updatedValidities = {
+      ...state.inputValidities,
+      [action.input]: action.isValid
+    };
+    let updatedFormIsValid = true;
+    for (const key in updatedValidities) {
+      updatedFormIsValid = updatedFormIsValid && updatedValidities[key];
+    }
+    return {
+      inputValues: updatedValues,
+      inputValidities: updatedValidities,
+      formIsValid: updatedFormIsValid
+    };
+  }
+  return state;
+};
+
+const RegisterScreen = () => {
+  const dispatch = useDispatch();
+
+  const [formState, dispatchFormState] = useReducer(formReducer, {
+    inputValues: {
+      email: "",
+      password: "",
+      repetirPassword: ""
+    },
+    inputValidities: {
+      email: false,
+      password: false,
+      repetirPassword: false
+    },
+    formIsValid: false
+  });
+
+  const handlerRegistro = () => {
+    if (
+      formState.inputValues.password ===
+        formState.inputValues.repetirPassword &&
+      formState.formIsValid
+    ) {
+      dispatch(
+        registro(formState.inputValues.email, formState.inputValues.password)
+      );
+    } else {
+      Alert.alert("formulaio invalido", "Ingresa email y usuario valido", [
+        { text: "ok" }
+      ]);
+    }
+  };
+
+  const onInputChangeHandler = useCallback(
+    (inputIdentifier, inputValue, inputValidity) => {
+      console.log(inputIdentifier, inputValue, inputValidity);
+      dispatchFormState({
+        type: FORM_INPUT_UPDATE,
+        value: inputValue,
+        isValid: inputValidity,
+        input: inputIdentifier
+      });
+    },
+    [dispatchFormState]
+  );
   return (
     <View>
-      <Header newStyles={fonts} text={"Registrarme"} />
       <Text style={{ fontFamily: "RobotoBlack", margin: 40, fontSize: 30 }}>
         FitMas
       </Text>
-      <Inputs fonts={fonts} text={"Email"} value={user} keyboardType="email-address"/>
-      <Inputs fonts={fonts} text={"Contraseña"} value={pass} password={true}/>
-      <Inputs fonts={fonts} text={"Nuevamente Contraseña"} value={pass} password={true}/>
+      <Inputs
+        id={"email"}
+        label="Email"
+        placeholder={"Email"}
+        email
+        keyboardType="email-address"
+        errorText={"Por favor ingrese un email válido"}
+        onInputChange={onInputChangeHandler}
+      />
+      <Inputs
+        id={"password"}
+        placeholder={"Ingrese su contraseña"}
+        password
+        secureTextEntry
+        keyboardType="default"
+        errorText={"Por favor ingrese una contraseña válida"}
+        onInputChange={onInputChangeHandler}
+      />
+      <Inputs
+        id={"repetirPassword"}
+        placeholder={"Ingrese nuevamente su contraseña"}
+        password
+        secureTextEntry
+        keyboardType="default"
+        errorText={
+          "Las contraseñas no coinciden, Ingrese nuevamente su contraseña"
+        }
+        onInputChange={onInputChangeHandler}
+      />
       <View
         style={{
           flexDirection: "row",
@@ -25,12 +120,7 @@ const RegisterScreen = ({ onIsLoggin,onExit, user, pass,fonts }) => {
         }}
       >
         <Buttons
-          funtion={()=>onExit(false)}
-          colorBase={COLORS.buttonColor}
-          title={"SALIR"}
-        />
-        <Buttons
-          funtion={()=>onIsLoggin(false)}
+          funtion={handlerRegistro}
           colorBase={COLORS.buttonColor}
           title={"REGISTRAR"}
         />

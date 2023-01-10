@@ -15,7 +15,7 @@ const BottonTabs = createBottomTabNavigator();
 
 export default (BottonTabNavigator = ({ loggOut }) => {
   return (
-    <NavigationContainer>
+    // <NavigationContainer>
       <BottonTabs.Navigator
         initialRouteName="PrincipalScreen"
         screenOptions={{
@@ -82,7 +82,7 @@ export default (BottonTabNavigator = ({ loggOut }) => {
           }}
         /> */}
       </BottonTabs.Navigator>
-    </NavigationContainer>
+    // </NavigationContainer>
   );
 });
 

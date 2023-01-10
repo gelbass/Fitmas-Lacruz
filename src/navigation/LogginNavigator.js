@@ -9,7 +9,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 const Stack = createNativeStackNavigator();
 
-export default (LogginNavigator = ({ onLoggout }) => {
+export default (LogginNavigator = () => {
   return (
     <Stack.Navigator
       initialRouteName="index"
@@ -17,12 +17,13 @@ export default (LogginNavigator = ({ onLoggout }) => {
         headerStyle: { backgroundColor: COLORS.primario },
         headerTintColor: COLORS.blanco,
         headerTitleStyle: { fontFamily: "RobotoBlack" },
-        headerTitleAlign: "center"
+        headerTitleAlign: "center",
+        
       }}
     >
-      <Stack.Screen name="index" component={IndexScreen} />
-      <Stack.Screen name="loggin" component={LogginScreen} />
-      <Stack.Screen name="register" component={RegisterScreen} />
+      <Stack.Screen name="index" component={IndexScreen} options={{title:""}}/>
+      <Stack.Screen name="loggin" component={LogginScreen} options={{title:"Inicio de Sesión"}}/>
+      <Stack.Screen name="register" component={RegisterScreen} options={{title:"Registráme"}}/>
     </Stack.Navigator>
   );
 });
