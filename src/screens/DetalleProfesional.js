@@ -13,8 +13,8 @@ const DetalleProfesional = ({ navigation }) => {
       nombre: item.nombre
     });
   };
+  // CREAR EL MAPA PARA ESTUDIOS
   const estudios = () => {};
-
   return (
     <ScrollView>
       <View style={styles.container}>

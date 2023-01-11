@@ -24,18 +24,13 @@ export const registro = (email, password) => {
       dispatch({
         type: REGISTRO,
         token: resData.idToken,
-        userId: resData.localId,
-
+        userId: resData.localId
       });
       console.log(resData);
-      // if (resData.error.message == "EMAIL_EXISTS")
-      //   Alert.alert("Error", "El email ingresado ya se encuentra registrado", [
-      //     { text: "Ok" }
-      //   ]);
-      // if (resData.error.message == "EMAIL_EXISTS")
-      //   Alert.alert("Error", "El email ingresado ya se encuentra registrado", [
-      //     { text: "Ok" }
-      //   ]);
+      if (resData.error.message == "EMAIL_EXISTS")
+        Alert.alert("Error", "El email ingresado ya se encuentra registrado", [
+          { text: "Ok" }
+        ]);
     } catch (error) {
       Alert.alert(error);
     }
@@ -61,8 +56,8 @@ export const loggin = (email, password) => {
       dispatch({
         type: LOGIN,
         token: resData.idToken,
-        userId: resData.localId,
-      })
+        userId: resData.localId
+      });
       console.log(resData);
     } catch (error) {
       console.log(error);

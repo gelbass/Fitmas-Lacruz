@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     width: "40%" ,
     justifyContent: "center",
     borderRadius: 8,
-    elevation: 5
+    elevation: 5,
   },
   buttonText: {
     fontFamily: "RobotoMedium",

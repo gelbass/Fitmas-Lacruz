@@ -1,5 +1,5 @@
+import { FlatList, ScrollView, StyleSheet, Text, View } from "react-native";
 import React, { useState } from "react";
-import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 
 import Buttons from "../components/Buttons";
@@ -21,37 +21,33 @@ const AgendarProfesional = () => {
   };
   const [newAenda, setNewAgenda] = useState({});
   const [fecha, setFecha] = useState(getCurrentDate);
-  const [hora, setHora] = useState("8:30");
+  const [hora, setHora] = useState("");
   console.log(profesional);
-  const handlerAddAgenda = profesional =>
+  const handlerAddAgenda = () =>
     dispatch(
       addAgenda(
         setNewAgenda({
-          profesionalID: profesional,
+          profesional: profesional,
           fecha: fecha,
           hora: hora
         })
       )
     );
   console.log(newAenda);
+  console.log(agenda);
   return (
     <ScrollView>
       <Calendario onSelectDay={setFecha} />
-      <Text>
-        <Horarios
-          horarios={profesional.disponibilidad}
-          onSelectedHour={setHora}
-        />
-      </Text>
-      <View>
-        {profesional.disponibilidad.forEach(
-          element =>
-            element.fecha == fecha
-              ? element.horarios.map(cupo =>
-                  <Horarios horarios={cupo} onSelectedHour={setHora} />
-                )
-              : <Text>NO HAY CUPO</Text>
+      <Text style={styles.titulo}>Horarios disponibles</Text>
+      <View style={styles.horarios}>
+        {profesional.disponibilidad.map(
+          item =>
+            item.fecha === fecha
+              ? <Horarios horarios={item.horarios} onSelectedHour={setHora} />
+              : <Text></Text>
         )}
+        {console.log(hora)}
+        </View>
         <View style={{ flexDirection: "row" }}>
           <Buttons title={"CANCELAR"} colorBase={COLORS.buttonColor} />
           <Buttons
@@ -61,11 +57,22 @@ const AgendarProfesional = () => {
             funtion={handlerAddAgenda}
           />
         </View>
-      </View>
     </ScrollView>
   );
 };
 
 export default AgendarProfesional;
 
-const styles = StyleSheet.create({ calendario: { height: 360, width: 372 } });
+const styles = StyleSheet.create({
+  calendario: { height: 360, width: 372 },
+  titulo: {
+    fontFamily: "RobotoMedium",
+    fontSize: 14,
+    fontWeight: "600",
+    margin: 10
+  },
+  horarios: {
+    flexDirection: "row",
+    justifyContent: "center"
+  }
+});

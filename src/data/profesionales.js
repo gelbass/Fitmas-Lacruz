@@ -15,7 +15,7 @@ export const PROFESIONALES = [
     ubicacion: "direccion",
     disponibilidad: [
       {
-        fecha:"2022-12-10",
+        fecha:"2023-01-22",
         horarios: [
           { turno: "Mañana", hora: "08:30" },
           { turno: "Mañana", hora: "10:30" },
@@ -24,7 +24,7 @@ export const PROFESIONALES = [
         ]
       },
       {
-        fecha:"2023-01-01",
+        fecha:"2023-01-31",
         horarios: [
           { turno: "Mañana", hora: "08:30" },
           { turno: "Mañana", hora: "10:30" },
@@ -50,7 +50,7 @@ export const PROFESIONALES = [
     ubicacion: "direccion",
     disponibilidad: [
       {
-        fecha:"2022-12-10",
+        fecha:"2023-01-22",
         horarios: [
           { turno: "Mañana", hora: "08:30" },
           { turno: "Mañana", hora: "10:30" },
@@ -59,7 +59,7 @@ export const PROFESIONALES = [
         ]
       },
       {
-        fecha:"2023-01-01",
+        fecha:"2023-01-31",
         horarios: [
           { turno: "Mañana", hora: "08:30" },
           { turno: "Mañana", hora: "10:30" },
@@ -85,7 +85,7 @@ export const PROFESIONALES = [
     ubicacion: "direccion",
     disponibilidad: [
       {
-        fecha:"2022-12-10",
+        fecha:"2023-01-22",
         horarios: [
           { turno: "Mañana", hora: "08:30" },
           { turno: "Mañana", hora: "10:30" },
@@ -94,7 +94,7 @@ export const PROFESIONALES = [
         ]
       },
       {
-        fecha:"2023-01-01",
+        fecha:"2023-01-31",
         horarios: [
           { turno: "Mañana", hora: "08:30" },
           { turno: "Mañana", hora: "10:30" },
@@ -120,7 +120,7 @@ export const PROFESIONALES = [
     ubicacion: "direccion",
     disponibilidad: [
       {
-        fecha:"2022-12-10",
+        fecha:"2023-01-22",
         horarios: [
           { turno: "Mañana", hora: "08:30" },
           { turno: "Mañana", hora: "10:30" },
@@ -129,7 +129,7 @@ export const PROFESIONALES = [
         ]
       },
       {
-        fecha:"2023-01-01",
+        fecha:"2023-01-31",
         horarios: [
           { turno: "Mañana", hora: "08:30" },
           { turno: "Mañana", hora: "10:30" },
@@ -155,7 +155,7 @@ export const PROFESIONALES = [
     ubicacion: "direccion",
     disponibilidad: [
       {
-        fecha:"2022-12-10",
+        fecha:"2023-01-22",
         horarios: [
           { turno: "Mañana", hora: "08:30" },
           { turno: "Mañana", hora: "10:30" },
@@ -164,7 +164,7 @@ export const PROFESIONALES = [
         ]
       },
       {
-        fecha:"2023-01-01",
+        fecha:"2023-01-31",
         horarios: [
           { turno: "Mañana", hora: "08:30" },
           { turno: "Mañana", hora: "10:30" },
@@ -190,7 +190,7 @@ export const PROFESIONALES = [
     ubicacion: "direccion",
     disponibilidad: [
       {
-        fecha:"2022-12-10",
+        fecha:"2023-01-22",
         horarios: [
           { turno: "Mañana", hora: "08:30" },
           { turno: "Mañana", hora: "10:30" },
@@ -199,7 +199,7 @@ export const PROFESIONALES = [
         ]
       },
       {
-        fecha:"2023-01-01",
+        fecha:"2023-01-31",
         horarios: [
           { turno: "Mañana", hora: "08:30" },
           { turno: "Mañana", hora: "10:30" },
