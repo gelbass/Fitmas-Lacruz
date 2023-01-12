@@ -11,7 +11,6 @@ import { useDispatch } from "react-redux";
 const FORM_INPUT_UPDATE = "FORM_INPUT_UPDATE";
 
 const formReducer = (state, action) => {
-  console.log(action);
   if (action.type === FORM_INPUT_UPDATE) {
     const updatedValues = {
       ...state.inputValues,
@@ -61,7 +60,6 @@ const LogginScreen = () => {
 
   const onInputChangeHandler = useCallback(
     (inputIdentifier, inputValue, inputValidity) => {
-      console.log(inputIdentifier, inputValue, inputValidity);
       dispatchFormState({
         type: FORM_INPUT_UPDATE,
         value: inputValue,

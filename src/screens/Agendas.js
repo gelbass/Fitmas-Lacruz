@@ -13,7 +13,7 @@ const Agendas = () => {
   // const handleDeleteItem = (id) => {
   //   dispatch(removeItem(id));
   // };
-
+  console.log(agendas);
   const renderItem = ({ agendas }) => (
     <Cart >
       <Text>agendas</Text>

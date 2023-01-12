@@ -47,7 +47,7 @@ const DetalleProfesional = ({ navigation }) => {
       </View>
       <View style={styles.container}>
         {profesional.estudios.map(estudio =>
-          <View>
+          <View key={estudio.titulo}>
             <View
               style={{
                 flexDirection: "row",
