@@ -1,31 +1,38 @@
 import { FlatList, StyleSheet, Text, View } from "react-native";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import Buttons from "../components/Buttons";
-import Cards from '../components/Cards';
-import React from "react";
+import Cards from "../components/Cards";
+import { getAgendas } from "../store/actions/agenda.actions";
 
 const Agendas = () => {
-  const agenda = useSelector(state => state.agenda.agendas);
+  const dispatch = useDispatch();
+  const agenda = useSelector(state => state.agenda.agendas).map(item=>item.items);
 
+  useEffect(() => {
+    dispatch(getAgendas())
+    // console.log(agenda);
+  }, [])
+  
   const handlerAgendas = ({ item }) =>
     <Cards>
       <Text>
         Profesional:
-        {item.nombreProfesional}
+        {item.map(i =>i.nombreProfesional)}
       </Text>
       <Text>
-        Fecha: {item.fecha} Hora: {item.hora}
+        Fecha: {item.map(i =>i.fecha)} Hora: {item.map(i =>i.hora)}
       </Text>
-    </Cards>;
+    </Cards>
   return (
     <View>
-      <FlatList
-        data={agenda}
-        keyExtractor={item => item.id}
-        renderItem={handlerAgendas}
-      />
-      <Buttons title={"CONFIRMAR"} />
+      {agenda < 0
+        ? <Text>No ha realizado ninguna agenda</Text>
+        : <FlatList
+            data={agenda}
+            keyExtractor={item => item.date}
+            renderItem={handlerAgendas}
+          />}
     </View>
   );
 };

@@ -1,13 +1,38 @@
 import * as Location from "expo-location";
 
 import { Alert, Button, StyleSheet, Text, View } from "react-native";
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 
 import Buttons from "../components/Buttons";
-import Header from "../components/Header";
+import {COLORS} from '../constants/colors';
 import Inputs from "../components/Inputs";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import Mapa from "../components/Mapa";
+
+const FORM_INPUT_UPDATE = "FORM_INPUT_UPDATE";
+
+const formReducer = (state, action) => {
+  if (action.type === FORM_INPUT_UPDATE) {
+    const updatedValues = {
+      ...state.inputValues,
+      [action.input]: action.value
+    };
+    const updatedValidities = {
+      ...state.inputValidities,
+      [action.input]: action.isValid
+    };
+    let updatedFormIsValid = true;
+    for (const key in updatedValidities) {
+      updatedFormIsValid = updatedFormIsValid && updatedValidities[key];
+    }
+    return {
+      inputValues: updatedValues,
+      inputValidities: updatedValidities,
+      formIsValid: updatedFormIsValid
+    };
+  }
+  return state;
+};
 
 const Buscar = () => {
   const [pickLocation, setPickLocation] = useState();
@@ -37,16 +62,25 @@ const Buscar = () => {
     });
     console.log(location);
   };
-
+  const onInputChangeHandler = useCallback(
+    (inputIdentifier, inputValue, inputValidity) => {},
+    []
+  );
   return (
     <View>
-      {/* <Header text={"Buscar"} /> */}
-        <Text style={styles.titulo}>Mi ubicación</Text>
+      <Text style={styles.titulo}>Mi ubicación</Text>
       <View style={styles.container}>
-        {/* <Inputs newStyles={styles.input} text={"Buscar un profesional"} /> */}
+        <Inputs
+          id={"direccion"}
+          label={"Dirección"}
+          placeholder={"Buscar un profesional"}
+          onInputChange={onInputChangeHandler}
+          newStyle={styles.input}
+        />
         <Buttons
           newStyles={styles.button}
           title={<Ionicons name="search" size={20} />}
+          colorBase={COLORS.buttonColor}
           funtion={handlerGetLocation}
         />
       </View>
@@ -64,12 +98,13 @@ export default Buscar;
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
+    alignItems:"center",
+    justifyContent:"space-between",
     alignContent: "space-between"
   },
-  input: { width: 290 },
+  input: { width: "160%",},
   button: {
     width: 40,
-    margin: 0
   },
   titulo: {
     padding: 15,

@@ -1,6 +1,7 @@
 import {
   ADD_AGENDA,
   CONFIRM_AGENDA,
+  GET_AGENDA,
   REMOVE_AGENDA
 } from "../actions/agenda.actions";
 
@@ -36,6 +37,9 @@ const AgendaReducer = (state = initialState, action) => {
     case CONFIRM_AGENDA:
       return { ...state, agendas: [] };
 
+    case GET_AGENDA:
+      // console.log(action.agendas);
+      return { ...state, agendas: action.agendas };
     default:
       return state;
   }
