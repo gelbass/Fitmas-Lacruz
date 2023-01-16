@@ -16,27 +16,28 @@ const getCurrentDate = () => {
   return year + "-" + month + "-" + date;
 };
 
-const AgendarProfesional = () => {
+const AgendarProfesional = ({ navigation }) => {
   const dispatch = useDispatch();
   const profesional = useSelector(state => state.profesionales.selected);
   const agenda = useSelector(state => state.agenda);
-  const [newAgenda, setNewAgenda] = useState({});
   const [fecha, setFecha] = useState(getCurrentDate);
   const [hora, setHora] = useState("");
 
   const handlerAddAgenda = () => {
     dispatch(
       addAgenda({
-        id: profesional.id,
+        id: Date.now(),
         nombre: "PEPE",
+        idProfesional: profesional.id,
         nombreProfesional: profesional.nombre,
         categoria: profesional.categoria,
         fecha: fecha,
         hora: hora
       })
-      );
-    };
-    console.log(agenda);
+    );
+    navigation.navigate("Confirmacion", {});
+  };
+  // console.log(agenda);
   return (
     <ScrollView>
       <Calendario onSelectDay={setFecha} />
@@ -46,13 +47,12 @@ const AgendarProfesional = () => {
           cupo =>
             cupo.fecha === fecha
               ? <Horarios
-                  key={cupo.fecha}
+                  key={cupo}
                   horarios={cupo.horarios}
                   onSelectedHour={setHora}
                 />
               : <Text />
         )}
-        {console.log(hora)}
       </View>
       <View style={{ flexDirection: "row" }}>
         <Buttons title={"CANCELAR"} colorBase={COLORS.buttonColor} />

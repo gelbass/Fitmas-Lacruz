@@ -37,28 +37,9 @@ export default function App() {
   if (!loaded) {
     return null;
   }
-/*   let content = (
-    <IndexScreen onGoTologgin={handleGoTologgin} onGoToRegister={handleGoToRegister}/>
-    // <LogginNavigator loggOut={handleIsLoggin}/>
-  );
 
-  goTologgin &&
-    (content = (
-      <LogginScreen onExit={handleGoTologgin} onIsLoggin={handleIsLoggin} />
-    ));
-
-  goToRegister &&
-    (content = (
-      <RegisterScreen onExit={handleGoToRegister} onRegister={handleRegister} />
-    ));
-
-  isLogueado || (content = <BottonTabNavigator loggOut={handleIsLoggin} />);
- */
   return (
     <Provider store={store}>
-      {/* <View style={{ flex: 1, backgroundColor: COLORS.backgroundColor }}>
-        {content}
-      </View> */}
       <MainNavigator />
     </Provider>
   );

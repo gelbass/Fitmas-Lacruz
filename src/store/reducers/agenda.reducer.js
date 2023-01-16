@@ -11,23 +11,18 @@ const AgendaReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_AGENDA:
       console.log(action.type);
-      console.log(action.item);
-      const indexItem = state.agendas.findIndex(
-        item => item === action.item.id
-      );
-      console.log(indexItem);
+      const indexItem = state.agendas.findIndex(item => {
+        item == action.item;
+      });
       if (indexItem === -1) {
         const item = { ...action.item };
-        console.log(item);
         const updateAgenda = [...state.agendas, item];
-        console.log(updateAgenda);
         return { ...state, agendas: updateAgenda };
       }
       const agendas = [...state.agendas].map(item => {
-        id(item.id === action.item.id);
+        item.id === action.item.id;
       });
-      console.log(agendas);
-      
+
       return agendas;
 
     case REMOVE_AGENDA:

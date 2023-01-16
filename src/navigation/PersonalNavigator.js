@@ -1,5 +1,6 @@
 import AgendarProfesional from "../screens/AgendarProfesional";
 import { COLORS } from "../constants/colors";
+import ConfirmarAgendaScreen from "../screens/ConfirmarAgendaScreen";
 import DetalleProfesional from "../screens/DetalleProfesional";
 import PrincipalScreen from "../screens/PrincipalScreen";
 import ProfesionalesScreen from "../screens/ProfesionalesScreen";
@@ -28,6 +29,7 @@ export default (PersonalNavigator = ({ onLoggout }) => {
       />
       <Stack.Screen name="Agenda" component={AgendarProfesional}/>
       <Stack.Screen name="Detalle" component={DetalleProfesional} options={{ title: "FitMas" }}/>
+      <Stack.Screen name="Confirmacion" component={ConfirmarAgendaScreen} options={{title:"Confirma tu agenda"}}/>
     </Stack.Navigator>
   );
 });

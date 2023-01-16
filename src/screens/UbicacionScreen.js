@@ -4,7 +4,6 @@ import { Alert, Button, StyleSheet, Text, View } from "react-native";
 import React, { useState } from "react";
 
 import Buttons from "../components/Buttons";
-import Header from "../components/Header";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import Mapa from "../components/Mapa";
 
@@ -36,7 +35,6 @@ const UbicacionScreen = () => {
 
   return (
     <View>
-      <Header text={"UBICACION"} />
       <Buttons
           newStyles={styles.button}
           title={<Ionicons name="search" size={20} />}

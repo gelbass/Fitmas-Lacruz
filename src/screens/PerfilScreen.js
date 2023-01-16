@@ -13,7 +13,6 @@ import {
 import Buttons from "../components/Buttons";
 import { COLORS } from "../constants/colors";
 import Cards from "../components/Cards";
-import Header from "../components/Header";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useState } from "react";
 
@@ -51,7 +50,6 @@ const PerfilScreen = ({ onLoggout }) => {
   return (
     <View style={{}}>
       <ScrollView>
-        <Header text={"FitMas"} />
         <TouchableOpacity
           style={{ alignItems: "center" }}
           onPress={handlerImagen}

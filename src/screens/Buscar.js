@@ -40,10 +40,10 @@ const Buscar = () => {
 
   return (
     <View>
-      <Header text={"Buscar"} />
+      {/* <Header text={"Buscar"} /> */}
         <Text style={styles.titulo}>Mi ubicación</Text>
       <View style={styles.container}>
-        <Inputs newStyles={styles.input} text={"Buscar un profesional"} />
+        {/* <Inputs newStyles={styles.input} text={"Buscar un profesional"} /> */}
         <Buttons
           newStyles={styles.button}
           title={<Ionicons name="search" size={20} />}

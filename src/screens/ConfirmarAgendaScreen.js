@@ -1,17 +1,18 @@
 import { FlatList, StyleSheet, Text, View } from "react-native";
-import { useDispatch, useSelector } from "react-redux";
 
 import Buttons from "../components/Buttons";
-import Cards from '../components/Cards';
+import Cards from "../components/Cards";
 import React from "react";
+import Texts from "../components/Texts";
+import { useSelector } from "react-redux";
 
-const Agendas = () => {
+const ConfirmarAgendaScreen = () => {
   const agenda = useSelector(state => state.agenda.agendas);
 
   const handlerAgendas = ({ item }) =>
     <Cards>
       <Text>
-        Profesional:
+        Profesional: 
         {item.nombreProfesional}
       </Text>
       <Text>
@@ -30,6 +31,6 @@ const Agendas = () => {
   );
 };
 
-export default Agendas;
+export default ConfirmarAgendaScreen;
 
 const styles = StyleSheet.create({});
