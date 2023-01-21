@@ -1,26 +1,65 @@
-import { Calendar, LocaleConfig } from "react-native-calendars";
 import { StyleSheet, Text, View } from "react-native";
 
 import { COLORS } from "../constants/colors";
+import { Calendar } from "react-native-calendars";
 import React from "react";
+import { useEffect } from "react";
+import { useMemo } from "react";
 import { useSelector } from "react-redux";
+import { useState } from "react";
 
-const Calendario = ({onSelectDay}) => {
+const Calendario = ({ onSelectDay }) => {
   const profesional = useSelector(state => state.profesionales.selected);
+  const [selected, setSelected] = useState();
   const listadoDias = () => {
-    return profesional.disponibilidad.map(horario => horario.fecha);
+    let dia = {};
+    profesional.disponibilidad.map(
+      horario =>
+        (dia[horario.fecha] = {
+          customStyles: {
+            container: {
+              backgroundColor: COLORS.nativo,
+              borderRadius: 25
+            },
+            text: {
+              color: COLORS.blanco
+            }
+          }
+        })
+    );
+    const marked = useMemo(
+      () => ({
+        [selected]: {
+          customStyles: {
+            container: {
+              backgroundColor: COLORS.seleccionado,
+              borderRadius: 25
+            },
+            text: {
+              color: COLORS.blanco
+            }
+          }
+        }
+      }),
+      [selected]
+    );
+    console.log({...dia,...marked});
+    return {...dia,...marked};
   };
-  // console.log(listadoDias());
   return (
-    <View style={{  }}>
-      <Calendar style={styles.calendario}  
-      minDate={"2022-11-31"}
-      maxDate={"2025-12-31"}
-      onDayPress={day =>{onSelectDay(day.dateString)}}
-      selected={'2022-12-16'}
-      theme={{
-        arrowColor: COLORS.primario,
-      }}
+    <View style={{}}>
+      <Calendar
+        style={styles.calendario}
+        minDate={"2022-11-31"}
+        maxDate={"2025-12-31"}
+        onDayPress={day => {
+          onSelectDay(day.dateString), setSelected(day.dateString);
+        }}
+        markingType="custom"
+        markedDates={listadoDias()}
+        theme={{
+          arrowColor: COLORS.primario
+        }}
       />
     </View>
   );
@@ -30,11 +69,11 @@ export default Calendario;
 
 const styles = StyleSheet.create({
   calendario: {
-    width: 'auto',
-    height:360,
+    width: "auto",
+    height: 360,
     margin: 10,
-    borderRadius:12,
-    elevation:2
+    borderRadius: 12,
+    elevation: 2
   }
 });
 // onDayPress={day => {

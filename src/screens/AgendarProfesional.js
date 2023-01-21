@@ -1,4 +1,18 @@
-import { FlatList, ScrollView, StyleSheet, Text, View } from "react-native";
+import {
+  Alert,
+  FlatList,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View
+} from "react-native";
+import {
+  CONFIRM_AGENDA,
+  addAgenda,
+  cleanAgenda,
+  confirmarAgenda,
+  statusAgenda
+} from "../store/actions/agenda.actions";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -6,7 +20,6 @@ import Buttons from "../components/Buttons";
 import { COLORS } from "../constants/colors";
 import Calendario from "../components/Calendario";
 import Horarios from "../components/Horarios";
-import { addAgenda } from "../store/actions/agenda.actions";
 
 // OBTENER FECHA ACTUAL
 const getCurrentDate = () => {
@@ -16,7 +29,7 @@ const getCurrentDate = () => {
   return year + "-" + month + "-" + date;
 };
 
-const AgendarProfesional = ({ navigation }) => {
+const AgendarProfesional = ({ navigation, profesionalInfo }) => {
   const dispatch = useDispatch();
   const profesional = useSelector(state => state.profesionales.selected);
   const agenda = useSelector(state => state.agenda);
@@ -35,9 +48,17 @@ const AgendarProfesional = ({ navigation }) => {
         hora: hora
       })
     );
-    navigation.navigate("Confirmacion", {});
+
+    hora
+      ? navigation.navigate("Confirmacion", {
+          categoria: profesional.categoria
+        })
+      : Alert.alert("Debe seleccionar correctamente su agenda.");
   };
-  // console.log(agenda);
+  const onCleanAgenda = () =>{
+    dispatch(cleanAgenda());
+    navigation.navigate("Home")
+  }
   return (
     <ScrollView>
       <Calendario onSelectDay={setFecha} />
@@ -45,17 +66,16 @@ const AgendarProfesional = ({ navigation }) => {
       <View style={styles.horarios}>
         {profesional.disponibilidad.map(
           cupo =>
-            cupo.fecha === fecha
-              ? <Horarios
-                  key={cupo}
-                  horarios={cupo.horarios}
-                  onSelectedHour={setHora}
-                />
-              : <Text />
+            cupo.fecha === fecha &&
+            <Horarios
+              key={cupo}
+              horarios={cupo.horarios}
+              onSelectedHour={setHora}
+            />
         )}
-      </View>
+      </View> 
       <View style={{ flexDirection: "row" }}>
-        <Buttons title={"CANCELAR"} colorBase={COLORS.buttonColor} />
+        <Buttons title={"CANCELAR"} colorBase={COLORS.buttonColor} funtion={onCleanAgenda} />
         <Buttons
           title={"ACEPTAR"}
           colorBase={COLORS.nativo}

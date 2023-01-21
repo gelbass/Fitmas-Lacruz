@@ -47,6 +47,7 @@ const Buscar = () => {
       );
       return false;
     }
+    console.log("tengo permisos para mapa");
     return true;
   };
 
@@ -60,6 +61,7 @@ const Buscar = () => {
       lat: location.coords.latitude,
       lng: location.coords.longitude
     });
+    console.log("Location");
     console.log(location);
   };
   const onInputChangeHandler = useCallback(

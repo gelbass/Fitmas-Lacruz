@@ -10,7 +10,7 @@ const DetalleProfesional = ({ navigation }) => {
 
   const handlerCaledario = item => {
     navigation.navigate("Agenda", {
-      nombre: item.nombre
+      profesionalInfo: profesional
     });
   };
   // CREAR EL MAPA PARA ESTUDIOS

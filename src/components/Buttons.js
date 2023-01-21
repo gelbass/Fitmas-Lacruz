@@ -2,13 +2,14 @@ import { Pressable, StyleSheet, Text } from "react-native";
 
 import { COLORS } from "../constants/colors";
 
-const Buttons = ({ funtion, newStyles, newStylesText,colorBase, title, icono }) => {
+const Buttons = ({ funtion, newStyles, newStylesText,colorBase, title, icono, props }) => {
   return (
     <Pressable
       onPress={funtion}
+      {...props}
       style={({ pressed }) => [
         {
-          backgroundColor: pressed ? COLORS.seleccionado : colorBase
+          backgroundColor: pressed ? COLORS.seleccionado : colorBase,
         },
         { ...styles.button },
         { ...newStyles }

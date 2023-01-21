@@ -8,12 +8,12 @@ import { getAgendas } from "../store/actions/agenda.actions";
 const Agendas = () => {
   const dispatch = useDispatch();
   const agenda = useSelector(state => state.agenda.agendas).map(item=>item.items);
+  // const agenda = dispatch(getAgendas());
 
   useEffect(() => {
-    dispatch(getAgendas())
-    // console.log(agenda);
+    dispatch(getAgendas());
   }, [])
-  
+  console.log(agenda);
   const handlerAgendas = ({ item }) =>
     <Cards>
       <Text>
@@ -30,9 +30,11 @@ const Agendas = () => {
         ? <Text>No ha realizado ninguna agenda</Text>
         : <FlatList
             data={agenda}
-            keyExtractor={item => item.date}
+            keyExtractor={item => 1}
             renderItem={handlerAgendas}
-          />}
+          />
+      // : console.log("Log")
+      }
     </View>
   );
 };

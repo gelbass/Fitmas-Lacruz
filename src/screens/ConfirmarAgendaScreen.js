@@ -7,7 +7,7 @@ import Cards from "../components/Cards";
 import React from "react";
 import { confirmarAgenda } from "../store/actions/agenda.actions";
 
-const ConfirmarAgendaScreen = () => {
+const ConfirmarAgendaScreen = ({navigation}) => {
   const dispatch = useDispatch();
   const agenda = useSelector(state => state.agenda.agendas);
   console.log(agenda);
@@ -23,7 +23,7 @@ const ConfirmarAgendaScreen = () => {
     </Cards>;
 
   const handleConfirmarAgenda = () => {
-    dispatch(confirmarAgenda(agenda));
+    dispatch(confirmarAgenda(agenda)) && navigation.navigate("AgendaExitosa");
   };
   return (
     <View>

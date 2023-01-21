@@ -23,7 +23,7 @@ export default (LogginNavigator = () => {
       <Stack.Screen
         name="index"
         component={IndexScreen}
-        options={{ headerShown: false, }}
+        options={{ title:"" }}
       />
       <Stack.Screen
         name="loggin"

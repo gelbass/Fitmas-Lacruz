@@ -1,8 +1,8 @@
 import {
   ADD_AGENDA,
+  CLEAN_AGENDA,
   CONFIRM_AGENDA,
   GET_AGENDA,
-  REMOVE_AGENDA
 } from "../actions/agenda.actions";
 
 const initialState = {
@@ -26,19 +26,14 @@ const AgendaReducer = (state = initialState, action) => {
 
       return agendas;
 
-    case REMOVE_AGENDA:
-      /* const cleanAgenda = [
-        ...state.agendas,
-        filter(item => item.id !== action.itemID)
-      ]; */
-      return { ...state, items: cleanAgenda };
-      break;
+    case CLEAN_AGENDA:
+      return { ...state, agendas: []};
 
     case CONFIRM_AGENDA:
-      return { ...state, agendas: [] };
+      return { ...state, agendas: []};
 
     case GET_AGENDA:
-      // console.log(action.agendas);
+      console.log(action.agendas);
       return { ...state, agendas: action.agendas };
     default:
       return state;
