@@ -8,7 +8,6 @@ import { getAgendas } from "../store/actions/agenda.actions";
 const Agendas = () => {
   const dispatch = useDispatch();
   const agenda = useSelector(state => state.agenda.agendas).map(item=>item.items);
-  // const agenda = dispatch(getAgendas());
 
   useEffect(() => {
     dispatch(getAgendas());
