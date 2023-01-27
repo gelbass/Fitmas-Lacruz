@@ -43,7 +43,6 @@ const Calendario = ({ onSelectDay }) => {
       }),
       [selected]
     );
-    console.log({...dia,...marked});
     return {...dia,...marked};
   };
   return (

@@ -7,8 +7,6 @@ import { statusAgenda } from "../store/actions/agenda.actions";
 import { useDispatch } from "react-redux";
 
 const AgendaRealizadaScreen = ({ navigation }) => {
-  const dispatch = useDispatch()  
-  console.log(dispatch(statusAgenda()));
 
   const goToHome = () => {
     navigation.navigate("Home");
