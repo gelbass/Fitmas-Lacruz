@@ -25,9 +25,18 @@ const DetalleProfesional = ({ navigation }) => {
           </Text>
         </View>
         <View style={{ flexDirection: "row", alignItems: "center" }}>
+          <Ionicons name="location-sharp" size={30} style={styles.icono} />
           <Text>Esta a 1km</Text>
         </View>
+      </View>
+
+      <View style={styles.container}>
         <View style={{ flexDirection: "row", alignItems: "center" }}>
+          <Ionicons
+            name="person-circle-outline"
+            size={30}
+            style={styles.icono}
+          />
           <Text style={styles.titulo}>Bio</Text>
         </View>
         <Text style={styles.text}>
@@ -43,9 +52,6 @@ const DetalleProfesional = ({ navigation }) => {
           <Ionicons name="school" size={30} style={styles.icono} />
           <Text style={styles.titulo}>Formación profesional</Text>
         </View>
-        {}
-      </View>
-      <View style={styles.container}>
         {profesional.estudios.map(estudio =>
           <View key={estudio.titulo}>
             <View
@@ -55,7 +61,7 @@ const DetalleProfesional = ({ navigation }) => {
                 justifyItems: "flex-start"
               }}
             >
-              <Ionicons name="star" size={30} style={styles.icono} />
+              <Ionicons name="ribbon-sharp" size={30} style={styles.icono} />
               <Text
                 style={{
                   ...styles.text,
@@ -86,7 +92,7 @@ const DetalleProfesional = ({ navigation }) => {
       <View
         style={{
           flexDirection: "row",
-          justifyContent: "center",
+          justifyContent: "center"
         }}
       >
         <Buttons

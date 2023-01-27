@@ -33,15 +33,15 @@ const ProfesionalesScreen = ({ navigation }) => {
     >
       <View style={{ padding: 15, justifyContent: "center" }}>
         <Image source={item.foto} style={styles.img} />
-        <Text style={{ padding: 10 }}>
-          {item.calificacion}
+        <Text style={styles.calificacion}>Calificación: 
+          {` ${item.calificacion}`}
         </Text>
       </View>
-      <View style={styles.titulo}>
-        <Text>
+      <View>
+        <Text style={styles.titulo}>
           {item.nombre}
         </Text>
-        <Text style={{ width: "25%" }}>
+        <Text style={styles.detalle}>
           {item.descripcion}
         </Text>
       </View>
@@ -61,12 +61,18 @@ const ProfesionalesScreen = ({ navigation }) => {
 export default connect()(ProfesionalesScreen);
 
 const styles = StyleSheet.create({
-  titulo: { fontFamily: "RobotoBlack", padding: 15 },
+  titulo: { padding: 15, fontWeight: "800", fontSize: 20 },
   img: {
     width: 90,
     height: 90,
     borderRadius: 50,
     borderWidth: 1,
     borderColor: "#000"
+  },
+  detalle:{
+    fontSize: 14,
+    fontWeight:"400",
+    lineHeight:13.62,
+    width:"30%",
   }
 });

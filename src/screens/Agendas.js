@@ -1,8 +1,11 @@
-import { FlatList, StyleSheet, Text, View } from "react-native";
+import { Alert, FlatList, StyleSheet, Text, View } from "react-native";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
+import Buttons from "../components/Buttons";
+import { COLORS } from "../constants/colors";
 import Cards from "../components/Cards";
+import { deleteAgenda } from "../store/actions/agenda.actions";
 import { getAgendas } from "../store/actions/agendasConfirmadas.actions";
 
 const Agendas = () => {
@@ -14,32 +17,43 @@ const Agendas = () => {
     dispatch(getAgendas());
   }, []);
 
-  console.log("LISTADO AGENDA");
-  console.log(agenda);
-  const handlerAgendas = ({ item }) => (
-    <Cards newStyles={{padding:20}}>
-      <Text>
-        Profesional:
+  const handlerDeleteAgendaItem = (item)=> {
+    console.log(item.id);
+    dispatch(deleteAgenda(item.id)) && Alert.alert("Registro eliminado")
+    
+  }
+
+  const handlerAgendas = ({ item }) =>
+    <Cards newStyles={styles.cards}>
+      <Text style={styles.text}>
         {item[0].nombreProfesional}
       </Text>
-      <Text>
-        Fecha: {item[0].fecha} Hora: {item[0].hora} 
+      <Text style={styles.text}>
+        Fecha: {item[0].fecha} Hora: {item[0].hora}
       </Text>
-    </Cards>
-  );
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "center"
+        }}
+      >
+        <Buttons
+          funtion={()=>handlerDeleteAgendaItem(item)}
+          colorBase={COLORS.buttonColor}
+          title={"ELIMINAR"}
+        />
+      </View>
+    </Cards>;
 
-  console.log(agenda.length == 0);
   return (
     <View style={styles.container}>
       {agenda.length == 0
         ? <Text style={styles.text}>No ha realizado ninguna agenda</Text>
         : <FlatList
             data={agenda}
-            keyExtractor={item => item[0].id}
+            keyExtractor={item => item.id}
             renderItem={handlerAgendas}
-          />
-      // : console.log("Log")
-      }
+          />}
     </View>
   );
 };
@@ -55,5 +69,9 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "600",
     textAlign: "center"
+  },
+  cards: {
+    padding: 10,
+    justifyContent: "center"
   }
 });

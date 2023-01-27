@@ -36,7 +36,7 @@ export default (BottonTabNavigator = ({ loggOut }) => {
           headerShown: false,
           tabBarIcon: ({ focus }) =>
             <View>
-              <Ionicons name="logo-capacitor" size={30} style={styles.icono} />
+              <Ionicons name="barbell-sharp" size={30} style={styles.icono} />
             </View>
         }}
       >
@@ -62,6 +62,7 @@ export default (BottonTabNavigator = ({ loggOut }) => {
         name="Agendas"
         component={Agendas}
         options={{
+          unmountOnBlur: true,
           tabBarIcon: ({ focus }) =>
             <Ionicons name="calendar" size={30} style={styles.icono} />
         }}

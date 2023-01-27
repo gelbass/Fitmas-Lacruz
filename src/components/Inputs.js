@@ -108,6 +108,8 @@ const styles = StyleSheet.create({
     marginBottom: 8
   },
   errorText: {
-    color: "#ff0000"
+    textAlign:"center",
+    color: COLORS.seleccionado,
+    fontWeight:"700",
   }
 });

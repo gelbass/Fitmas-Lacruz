@@ -7,17 +7,15 @@ import Cards from "../components/Cards";
 import React from "react";
 import { confirmarAgenda } from "../store/actions/agenda.actions";
 
-const ConfirmarAgendaScreen = ({navigation}) => {
+const ConfirmarAgendaScreen = ({ navigation }) => {
   const dispatch = useDispatch();
   const agenda = useSelector(state => state.agenda.agendas);
-  console.log(agenda);
   const handlerAgendas = ({ item }) =>
-    <Cards>
-      <Text>
-        Profesional:
+    <Cards newStyles={styles.cards}>
+      <Text style={styles.text}>
         {item.nombreProfesional}
       </Text>
-      <Text>
+      <Text style={styles.text}>
         Fecha: {item.fecha} Hora: {item.hora}
       </Text>
     </Cards>;
@@ -50,4 +48,17 @@ const ConfirmarAgendaScreen = ({navigation}) => {
 
 export default ConfirmarAgendaScreen;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    margin: 10
+  },
+  text: {
+    padding: 10,
+    fontSize: 20,
+    fontWeight: "600",
+    textAlign: "center"
+  },
+  cards: {
+    padding: 10
+  }
+});

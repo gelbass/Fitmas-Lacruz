@@ -14,7 +14,8 @@ export const getAgendas = () => {
 
       const result = await response.json();
       const agendas = Object.keys(result).map(key => ({
-        ...result[key].agenda
+        ...result[key].agenda,
+        id: key
       }));
       dispatch({ type: GET_AGENDA, agendas: agendas });
     } catch (error) {

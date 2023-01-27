@@ -67,7 +67,7 @@ const PrincipalScreen = ({ navigation }) => {
         {item.detalle}
       </Text>
       <Buttons
-        title={`¡${item.titulo.toUpperCase()}!`}
+        title={`${item.titulo.toUpperCase()}`}
         newStyles={{
           width: "90%",
           alignItems: "center",

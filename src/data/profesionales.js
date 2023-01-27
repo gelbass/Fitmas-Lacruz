@@ -15,10 +15,10 @@ export const PROFESIONALES = [
         universidad: "Universidad Nacional de Rosario"
       }
     ],
-    ubicacion: "direccion",
+    ubicacion: "3 km",
     disponibilidad: [
       {
-        fecha: "2023-01-22",
+        fecha: "2023-02-03",
         horarios: [
           { turno: "Mañana", hora: "08:30", reservada: "no" },
           { turno: "Mañana", hora: "10:30", reservada: "no" },
@@ -53,10 +53,10 @@ export const PROFESIONALES = [
         universidad: "Universidad Nacional de Rosario"
       }
     ],
-    ubicacion: "direccion",
+    ubicacion: "3 km",
     disponibilidad: [
       {
-        fecha: "2023-01-22",
+        fecha: "2023-02-03",
         horarios: [
           { turno: "Mañana", hora: "08:30", reservada: "no" },
           { turno: "Mañana", hora: "10:30", reservada: "no" },
@@ -91,10 +91,10 @@ export const PROFESIONALES = [
         universidad: "Universidad Nacional de Rosario"
       }
     ],
-    ubicacion: "direccion",
+    ubicacion: "3 km",
     disponibilidad: [
       {
-        fecha: "2023-01-22",
+        fecha: "2023-02-03",
         horarios: [
           { turno: "Mañana", hora: "08:30", reservada: "no" },
           { turno: "Mañana", hora: "10:30", reservada: "no" },
@@ -129,10 +129,10 @@ export const PROFESIONALES = [
         universidad: "Universidad Nacional de Rosario"
       }
     ],
-    ubicacion: "direccion",
+    ubicacion: "3 km",
     disponibilidad: [
       {
-        fecha: "2023-01-22",
+        fecha: "2023-02-03",
         horarios: [
           { turno: "Mañana", hora: "08:30", reservada: "no" },
           { turno: "Mañana", hora: "10:30", reservada: "no" },
@@ -167,10 +167,10 @@ export const PROFESIONALES = [
         universidad: "Universidad Nacional de Rosario"
       }
     ],
-    ubicacion: "direccion",
+    ubicacion: "3 km",
     disponibilidad: [
       {
-        fecha: "2023-01-22",
+        fecha: "2023-02-03",
         horarios: [
           { turno: "Mañana", hora: "08:30", reservada: "no" },
           { turno: "Mañana", hora: "10:30", reservada: "no" },
@@ -205,10 +205,10 @@ export const PROFESIONALES = [
         universidad: "Universidad Nacional de Rosario"
       }
     ],
-    ubicacion: "direccion",
+    ubicacion: "3 km",
     disponibilidad: [
       {
-        fecha: "2023-01-22",
+        fecha: "2023-02-03",
         horarios: [
           { turno: "Mañana", hora: "08:30", reservada: "no" },
           { turno: "Mañana", hora: "10:30", reservada: "no" },

@@ -6,5 +6,6 @@ export const COLORS ={
   nativo: '#B78FCC',
   seleccionado: '#00A6A6',
   backgroundColor: '#D5D5D6',
-  buttonColor: '#F9F9F9',   
+  buttonColor: '#F9F9F9', 
+  gris:'#87898A'  
 };

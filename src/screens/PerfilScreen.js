@@ -18,7 +18,6 @@ import { useState } from "react";
 
 // import auth from "@react-native-firebase/auth";
 
-
 // import * as Permissions from "expo-permissions"
 
 const PerfilScreen = ({ navigation }) => {
@@ -51,7 +50,7 @@ const PerfilScreen = ({ navigation }) => {
       allowsEditing: true,
       aspect: [1, 1],
       quality: 0.8
-    }); 
+    });
     */
     const image = await ImagePicker.launchImageLibraryAsync({
       allowsEditing: true,
@@ -74,7 +73,18 @@ const PerfilScreen = ({ navigation }) => {
             />
           : <Image source={{ uri: pickedURI }} style={styles.img} />}
       </TouchableOpacity>
-      <Cards newStyles={{ padding: 15, height: 428 }}>
+      <Text
+        style={{
+          ...styles.text,
+          fontSize: 24,
+          lineHeight: 28.13,
+          fontWeight: "400",
+          textAlign: "center"
+        }}
+      >
+        USUARIO DEMO
+      </Text>
+      <Cards newStyles={{ padding: 15 }}>
         <View
           style={{
             flexDirection: "row",
@@ -84,7 +94,7 @@ const PerfilScreen = ({ navigation }) => {
           }}
         >
           <Ionicons
-            name="star"
+            name="location-sharp"
             size={30}
             style={{ ...styles.icono, paddingRight: 10 }}
           />
@@ -108,7 +118,7 @@ const PerfilScreen = ({ navigation }) => {
           }}
         >
           <Ionicons
-            name="add-circle-sharp"
+            name="person-circle-outline"
             size={30}
             style={{ ...styles.icono, paddingRight: 10 }}
           />
@@ -139,7 +149,8 @@ const PerfilScreen = ({ navigation }) => {
             flexDirection: "row",
             alignItems: "center",
             justifyItems: "flex-start",
-            paddingBottom: 10
+            paddingBottom: 10,
+            paddingTop: 10,
           }}
         >
           <Ionicons
@@ -171,8 +182,31 @@ const PerfilScreen = ({ navigation }) => {
           Definición. Aumento de masa muscular.
         </Text>
       </Cards>
-      <Cards>
-        <Text>Mis próximas citas</Text>
+      <Cards newStyles={{ padding: 15 }}>
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            justifyItems: "flex-start",
+            paddingBottom: 10
+          }}
+        >
+          <Ionicons
+            name="notifications-sharp"
+            size={30}
+            style={{ ...styles.icono, paddingRight: 10 }}
+          />
+          <Text
+            style={{
+              ...styles.text,
+              fontSize: 24,
+              lineHeight: 28.13,
+              fontWeight: "400"
+            }}
+          >
+            Mis próximas citas
+          </Text>
+        </View>
       </Cards>
       <View
         style={{

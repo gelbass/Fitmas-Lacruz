@@ -72,23 +72,23 @@ const Buscar = () => {
     <View>
       <Text style={styles.titulo}>Mi ubicación</Text>
       <View style={styles.container}>
-        <Inputs
+        {/* <Inputs
           id={"direccion"}
           label={"Dirección"}
           placeholder={"Buscar un profesional"}
           onInputChange={onInputChangeHandler}
           newStyle={styles.input}
-        />
+        /> */}
         <Buttons
           newStyles={styles.button}
-          title={<Ionicons name="search" size={20} />}
+          icono={<Ionicons name="location" size={30} />}
+          title={"MARCA TU UBICACIÓN"}
           colorBase={COLORS.buttonColor}
           funtion={handlerGetLocation}
         />
       </View>
       <View>
         <Mapa location={pickLocation} newstyle={styles.mapa}>
-          <Text>NO CARGO EL MAPA</Text>
         </Mapa>
       </View>
     </View>
@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
   },
   input: { width: "160%",},
   button: {
-    width: 40,
+    width: "90%",
   },
   titulo: {
     padding: 15,
